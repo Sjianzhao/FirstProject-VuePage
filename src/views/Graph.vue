@@ -111,7 +111,7 @@ export default {
         trigger: 'axis',
       },
       grid: {
-        x: '45px',
+        x: '52px',
         y: '80px',
         x2: '80px',
         y2: '30px',
@@ -165,71 +165,98 @@ export default {
           saveAsImage: {},
         },
       },
+      dataZoom: [
+        {
+          type: 'inside',
+          show: true,
+          xAxisIndex: [0],
+        },
+        {
+          type: 'inside',
+          xAxisIndex: [0],
+        },
+      ],
       series: [
         {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }, {
           name: '',
           data: [],
           type: 'line',
+          symbol: 'none',
         }],
     };
     this.chartLine.setOption(option);

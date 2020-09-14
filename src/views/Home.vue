@@ -9,12 +9,12 @@
                 <h4 style="color: antiquewhite;">基础信息</h4>
               </div>
               <div class="basebody">
-                <div class="basename" style="width: 30%; color: antiquewhite">
+                <div class="basename" style="width: 35%; color: antiquewhite">
                   站点名称:
                   <br />
                   {{element.deviceName}}
                 </div>
-                <div class="baseid" style="width: 30%; color: antiquewhite">
+                <div class="baseid" style="width: 25%; color: antiquewhite">
                   站点ID:
                   <br />
                   {{element.deviceId}}
@@ -75,10 +75,12 @@
           </div>
         </div>
       </div>
+      <div style=" width: 1%; display: flex; padding: 0px;"></div>
       <div class="chunk_1_2">
         <!-- <router-view /> -->
         <TestMap></TestMap>
       </div>
+      <div style=" width: 1%; display: flex; padding: 0px;"></div>
       <div class="chunk-hisdata">
         <TextHistoryData></TextHistoryData>
       </div>
@@ -88,9 +90,11 @@
         <div class="chunk_2_1">
           <TestVideo></TestVideo>
         </div>
+        <div style=" width: 1%; display: flex; padding: 0px;"></div>
         <div class="chunk_2_2">
           <TextGraph></TextGraph>
         </div>
+        <div style=" width: 1%; display: flex; padding: 0px;"></div>
         <div class="chunk-conjourn">
           <TextConJourn></TextConJourn>
         </div>
@@ -124,7 +128,7 @@ export default {
           }
         })
         .catch();
-    }, 1000);
+    }, 3000);
   },
   data() {
     return {
@@ -185,7 +189,18 @@ export default {
 .chunk_1_1 {
   width: 30%;
   display: flex;
-  padding-right: 8px;
+  padding: 6px;
+  box-shadow: 0 0 2.5vw #237ad4 inset;
+  background: linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) right bottom,
+  linear-gradient(#1359df, #1359df) right bottom;
+  background-repeat: no-repeat;
+  background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
 
 .baseifmt {
@@ -226,19 +241,21 @@ h4 {
   border-radius: 4px;
 }
 .bg-purple-dark {
-  background: rgba(255, 255, 255, 0.973);
+  background: rgba(255, 255, 255, 0.5);
 }
 .bg-purple {
-  background: rgba(25, 229, 222, 0.55);
+  background: rgba(25, 229, 222, 0.2);
 }
 .bg-purple1 {
-  background: rgba(229, 25, 219, 0.363);
+  background: rgba(229, 25, 219, 0.3);
 }
 .bg-purple2 {
-  background: rgba(124, 229, 25, 0.459);
+  background: rgba(124, 229, 25, 0.4);
 }
 .bg-purple3 {
-  background: rgba(229, 90, 25, 0.55);
+  background: rgba(124, 229, 25, 0.4);
+  filter: alpha(opacity=50);
+  opacity: 0.8;
 }
 .bg-purple-light {
   background: #11368d;
@@ -253,10 +270,22 @@ h4 {
 }
 /*显示地图的第二个块部分*/
 .chunk_1_2 {
-  width: 50%;
+  width: 48%;
   height: 100%;
   display: flex;
+  padding-left: 5px;
   padding-right: 5px;
+  box-shadow: 0 0 2.5vw #237ad4 inset;
+  background: linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) right bottom,
+  linear-gradient(#1359df, #1359df) right bottom;
+  background-repeat: no-repeat;
+  background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
 // #container {
 //   width: 100%;
@@ -265,20 +294,36 @@ h4 {
 // }
 /*显示视频的第三个块部分*/
 .chunk_2_1 {
-  top: 60%;
-  left: 0%;
   width: 30%;
-  height: 100%;
   display: flex;
-  padding-top: 0px;
+  padding: 3px;
+  box-shadow: 0 0 1.5vw #237ad4 inset;
+  background: linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) right bottom,
+  linear-gradient(#1359df, #1359df) right bottom;
+  background-repeat: no-repeat;
+  background-size: 0.1vw 18vw, 1.5vw 0.1vw;
+
 }
 /*显示折线图的第四个块部分*/
 .chunk_2_2 {
   top: 60%;
   left: 40%;
-  width: 50%;
+  width: 47%;
   display: flex;
-  padding-top: 5px;
+  padding: 5px;
+  box-shadow: 0 0 2.5vw #237ad4 inset;
+  background: linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) right bottom,
+  linear-gradient(#1359df, #1359df) right bottom;
+  background-repeat: no-repeat;
+  background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
 p {
   width: 100%;
@@ -287,10 +332,34 @@ p {
 .chunk-hisdata {
   width: 20%;
   display: flex;
+  padding: 5px;
+  box-shadow: 0 0 2.5vw #237ad4 inset;
+  background: linear-gradient(#2856ad, #1359df) left top,
+  linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) right bottom,
+  linear-gradient(#1359df, #1359df) right bottom;
+  background-repeat: no-repeat;
+  background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
 /*显示图形的第六个块部分*/
 .chunk-conjourn {
-  width: 20%;
+  width: 20.2%;
   display: flex;
+  padding: 5px;
+  box-shadow: 0 0 2.5vw #237ad4 inset;
+  background: linear-gradient(#2856ad, #1359df) left top,
+  linear-gradient(#1359df, #1359df) left top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) right top,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) left bottom,
+  linear-gradient(#1359df, #1359df) right bottom,
+  linear-gradient(#1359df, #1359df) right bottom;
+  background-repeat: no-repeat;
+  background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
 </style>

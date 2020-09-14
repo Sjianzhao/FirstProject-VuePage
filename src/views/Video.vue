@@ -189,7 +189,7 @@ export default {
 li a{
   display: block;
   color: rgb(8, 3, 3);
-  padding: 8px 8px;
+  padding: 4px 4px;
   text-decoration: none;
 }
 li a:hover:not(.active) {
