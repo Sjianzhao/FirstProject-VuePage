@@ -6,20 +6,20 @@
           <div class="baseifmt">
             <div style="width:100%">
               <div class="basetitle">
-                <h4>基地信息</h4>
+                <h4 style="color: antiquewhite;">基础信息</h4>
               </div>
               <div class="basebody">
-                <div class="basename" style="width: 30%">
+                <div class="basename" style="width: 30%; color: antiquewhite">
                   站点名称:
                   <br />
                   {{element.deviceName}}
                 </div>
-                <div class="baseid" style="width: 30%">
+                <div class="baseid" style="width: 30%; color: antiquewhite">
                   站点ID:
                   <br />
                   {{element.deviceId}}
                 </div>
-                <div class="basetime" style="width: 40%">
+                <div class="basetime" style="width: 40%; color: antiquewhite">
                   更新时间:
                   <br />
                   {{UpdaTime}}
@@ -28,7 +28,10 @@
             </div>
           </div>
           <div class="datalayout">
-            <h4>实时数据</h4><br />
+            <div>
+              <h4 style="color: antiquewhite">实时数据</h4>
+              <br />
+            </div>
             <el-row :gutter="10">
               <el-col :span="6"><div class="grid-content bg-purple">{{typedata[0].eName}}:
                 <br>{{typedata[0].eValue}} {{typedata[0].eUnit}}</div></el-col>
@@ -182,7 +185,7 @@ export default {
 .chunk_1_1 {
   width: 30%;
   display: flex;
-  padding-right: 5px;
+  padding-right: 8px;
 }
 
 .baseifmt {
@@ -267,7 +270,7 @@ h4 {
   width: 30%;
   height: 100%;
   display: flex;
-  padding-top: 5px;
+  padding-top: 0px;
 }
 /*显示折线图的第四个块部分*/
 .chunk_2_2 {

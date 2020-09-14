@@ -1,7 +1,7 @@
 <template>
   <div class="master">
     <div class="header">
-      <h1 style= "margin: 0;">标题</h1>
+      <h1 style= "margin: 0;">气象监控平台</h1>
     </div>
     <div class="main">
       <div class="nav">
@@ -23,11 +23,11 @@ export default {
   background-size:cover;
   height: 100%;
   width: 100%;
-  background: url('./assets/home_background.jpg') no-repeat center;
+  background: url('./assets/backgroundimg.png') no-repeat center;
   background-size: cover;
 }
 .header {
-  background: rgba(255, 255, 255, 0.808) none repeat scroll 0 0 !important;
+  box-shadow: 0px 1px 3px rgba(9, 8, 8, 0.8);
 }
 .main {
   width: 100%;
@@ -37,7 +37,6 @@ export default {
 .content {
   width: 100%;
   height: 100%;
-  background-color: rgba(251, 250, 255, 0.322);
 }
 h1{
   text-align:center;

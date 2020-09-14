@@ -183,17 +183,17 @@ export default {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background: #671ce0;
+  background: #137ee2;
   overflow: auto;
 }
 li a{
   display: block;
-  color: #000;
+  color: rgb(8, 3, 3);
   padding: 8px 8px;
   text-decoration: none;
 }
 li a:hover:not(.active) {
-  background-color: #555;
+  background-color: rgb(87, 83, 83);
   color: white;
 }
 .many-vedio{

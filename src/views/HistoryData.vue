@@ -2,10 +2,11 @@
   <div class="hisdata">
     <div class="hisdata-title">
       <div class="hisdata-tit">
-        <p> <b>历史数据</b></p>
+        <p style="color: antiquewhite"> <b>历史数据</b></p>
       </div>
       <div class="hisdata-bady">
         <el-table
+          :header-cell-style="{background:'#eef1f6',color:'#606266'}"
           class = "hisdata-table" :data.sync="tableData" style="width: 100%" height="100%"
         >
           <el-table-column

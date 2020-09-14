@@ -2,7 +2,7 @@
 <div class="con-jour">
   <el-row>
     <div class="con-title">
-      <p><b>阈值设置：</b></p>
+      <p style="color: antiquewhite"><b>阈值设置：</b></p>
     </div>
   </el-row>
   <el-row style="margin: 10px;">

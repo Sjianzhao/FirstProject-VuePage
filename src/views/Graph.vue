@@ -165,17 +165,6 @@ export default {
           saveAsImage: {},
         },
       },
-      dataZoom: [
-        {
-          type: 'slider',
-          show: true,
-          xAxisIndex: [0],
-        },
-        {
-          type: 'inside',
-          xAxisIndex: [0],
-        },
-      ],
       series: [
         {
           name: '',
@@ -254,7 +243,6 @@ export default {
 .gra-ui {
   width: 100%;
   height: 100%;
-  background: rgb(245, 239, 239);
 }
 .gra-cont {
   width: 100%;
@@ -267,7 +255,7 @@ export default {
   #gra-tit {
     text-align:center;
     color: blue;
-    background: rgb(219, 106, 61);
+    margin: 6px;
   }
 .el-tabs__item {
   margin: 0px;
