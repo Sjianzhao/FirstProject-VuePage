@@ -1,7 +1,7 @@
 <template>
   <div class="gra-ui">
     <div class="gra-cont">
-      <p id="gra-tit">数据曲线</p>
+      <p id="gra-tit"><b>数据曲线</b></p>
     </div>
       <div id="gra-chart" ></div>
   </div>
@@ -104,7 +104,7 @@ export default {
           data: this.channel[15],
         }],
       });
-    }, 60000);
+    }, 120000);
     this.chartLine = echarts.init(document.getElementById('gra-chart'));
     const option = {
       tooltip: {
@@ -119,7 +119,10 @@ export default {
       legend: {
         data: '',
       },
-      color: ['#8AE09F', '#FA6F53'],
+      color: [
+        '#8AE09F', '#FA0053', '#90EE90', '#CC0000',
+        '#CC0099', '#FFFF00', '#008080', '#A0522D',
+      ],
       xAxis: {
         type: 'time',
         splitLine: {
@@ -135,7 +138,7 @@ export default {
         },
         axisLine: {
           lineStyle: {
-            color: '#000000',
+            color: '#666666',
           },
         },
       },
@@ -150,7 +153,7 @@ export default {
         },
         axisLine: {
           lineStyle: {
-            color: '#000000',
+            color: '#666666',
           },
         },
       },
@@ -280,9 +283,13 @@ export default {
   overflow: hidden;
 }
   #gra-tit {
-    text-align:center;
-    color: blue;
-    margin: 6px;
+  width: 100%;
+  color: antiquewhite;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 2px 2px #092b88;
+  font-size: 20px;
   }
 .el-tabs__item {
   margin: 0px;

@@ -29,48 +29,143 @@
           </div>
           <div class="datalayout">
             <div>
-              <h4 style="color: antiquewhite">实时数据</h4>
-              <br />
+              <h4 style="color: antiquewhite;">实时数据</h4>
             </div>
             <el-row :gutter="10">
-              <el-col :span="6"><div class="grid-content bg-purple">{{typedata[0].eName}}:
-                <br>{{typedata[0].eValue}} {{typedata[0].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple1">{{typedata[1].eName}}:
-                <br>{{typedata[1].eValue}} {{typedata[1].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple2">{{typedata[2].eName}}:
-                <br>{{typedata[2].eValue}} {{typedata[2].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple3">{{typedata[3].eName}}:
-                <br>{{typedata[3].eValue}} {{typedata[3].eUnit}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[0].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[0].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[0].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple1">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[1].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[1].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[1].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple2">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[2].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[2].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[2].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple3">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[3].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[3].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
+                {{typedata[3].eUnit}}</span>
+              </div></el-col>
             </el-row>
             <el-row :gutter="10">
-              <el-col :span="6"><div class="grid-content bg-purple3">{{typedata[4].eName}}:
-                <br>{{typedata[4].eValue}} {{typedata[4].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple">{{typedata[5].eName}}:
-                <br>{{typedata[5].eValue}} {{typedata[5].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple1">{{typedata[6].eName}}:
-                <br>{{typedata[6].eValue}} {{typedata[6].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple2">{{typedata[7].eName}}:
-                <br>{{typedata[7].eValue}} {{typedata[7].eUnit}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple3">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[4].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[4].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[4].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[5].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[5].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[5].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple1">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[6].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[6].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[6].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple2">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[7].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[7].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
+                {{typedata[7].eUnit}}</span>
+              </div></el-col>
             </el-row>
             <el-row :gutter="10">
-              <el-col :span="6"><div class="grid-content bg-purple2">{{typedata[8].eName}}:
-                <br>{{typedata[8].eValue}} {{typedata[8].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple3">{{typedata[9].eName}}:
-                <br>{{typedata[9].eValue}} {{typedata[9].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple">{{typedata[10].eName}}:
-                <br>{{typedata[10].eValue}} {{typedata[10].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple1">{{typedata[11].eName}}:
-                <br>{{typedata[11].eValue}} {{typedata[11].eUnit}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple2">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[8].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[8].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[8].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple3">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[9].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[9].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[9].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[10].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[10].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[10].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple1">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[11].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[11].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
+                {{typedata[11].eUnit}}</span>
+              </div></el-col>
             </el-row>
             <el-row :gutter="10">
-              <el-col :span="6"><div class="grid-content bg-purple1">{{typedata[12].eName}}:
-                <br>{{typedata[12].eValue}} {{typedata[12].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple2">{{typedata[13].eName}}:
-                <br>{{typedata[13].eValue}} {{typedata[13].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple3">{{typedata[14].eName}}:
-                <br>{{typedata[14].eValue}} {{typedata[14].eUnit}}</div></el-col>
-              <el-col :span="6"><div class="grid-content bg-purple">{{typedata[15].eName}}:
-                <br>{{typedata[15].eValue}} {{typedata[15].eUnit}}</div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple1">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[12].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[12].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[12].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple2">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[13].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[13].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[13].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple3">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[14].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[14].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                {{typedata[14].eUnit}}</span>
+              </div></el-col>
+              <el-col :span="6"><div class="grid-content bg-purple">
+                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
+                {{typedata[15].eName}}:</p>
+                <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
+                {{typedata[15].eValue}}{{' '}}</span>
+                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
+                {{typedata[15].eUnit}}</span>
+              </div></el-col>
             </el-row>
           </div>
         </div>
@@ -222,7 +317,10 @@ export default {
 h4 {
   width: 100%;
   text-align: center;
-  margin: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 2px 1px #092b88;
+  font-size: 20px;
 }
 .subLay1_1 {
   width: 25%;
@@ -241,21 +339,19 @@ h4 {
   border-radius: 4px;
 }
 .bg-purple-dark {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(25, 164, 229, 0.4);
 }
 .bg-purple {
-  background: rgba(25, 229, 222, 0.2);
+  background:rgba(85, 86, 156, 0.315);
 }
 .bg-purple1 {
-  background: rgba(229, 25, 219, 0.3);
+  background:rgba(85, 86, 156, 0.315);
 }
 .bg-purple2 {
-  background: rgba(124, 229, 25, 0.4);
+  background:rgba(85, 86, 156, 0.315);
 }
 .bg-purple3 {
-  background: rgba(124, 229, 25, 0.4);
-  filter: alpha(opacity=50);
-  opacity: 0.8;
+  background: rgba(85, 86, 156, 0.315);
 }
 .bg-purple-light {
   background: #11368d;

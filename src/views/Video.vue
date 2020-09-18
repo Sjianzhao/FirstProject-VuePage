@@ -1,8 +1,8 @@
 <template>
   <div class="video-contant">
     <ul class="ul-cont">
-      <li @click="videoone(this)"><a href="#videocon1">视屏1</a></li>
-      <li @click="videotwo(this)"><a href="#videocon2">视屏2</a></li>
+      <li @click="videoone(this)"><a href="#videocon1">东南角</a></li>
+      <li @click="videotwo(this)"><a href="#videocon2">大门内</a></li>
       <li @click="videothree(this)"><a href="#videocon3">视屏3</a></li>
       <li @click="videofour(this)"><a href="#videocon4">视屏4</a></li>
       <li @click="videofive(this)"><a href="#videocon5">视屏5</a></li>
@@ -85,7 +85,6 @@ export default {
         flvPlayer.load();
         flvPlayer.play();
       }
-      // console.log(this.currentvideo);
     },
     videotwo() {
       this.currentvideo = 'videocon2';
@@ -154,7 +153,6 @@ export default {
     },
     videoseven() {
       this.currentvideo = 'videocon7';
-      console.log(77777);
       if (flvjs.isSupported()) {
         const video = document.getElementById(this.currentvideo);
         const flvPlayer = flvjs.createPlayer({

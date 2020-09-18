@@ -7,8 +7,10 @@
   </el-row>
   <el-row style="margin: 10px;">
    <el-col :span="9" style="font-size: large; margin: 6px;">选择要素：</el-col>
-    <el-select v-model="factor" placeholder="请选择要素"
-    style="width: 150px; height: 20px">
+    <el-select
+    v-model="factor" placeholder="请选择要素"
+    style="width: 140px; height: 20px;"
+    >
       <el-option v-for="item in options"  :key="item.value"
         :label="item.label" :value="item.value">
       </el-option>
@@ -17,13 +19,13 @@
   <div style="margin: 10px; height: 36px">
     <el-col :span="9" style="font-size: large; margin: 6px;">设置上限：</el-col>
     <el-input v-model="inputUp" placeholder="请输入上限"
-    style="width: 150px; height: 20px">
+    style="width: 140px; height: 20px">
     </el-input>
   </div>
   <div style="margin: 10px; height: 36px">
     <el-col :span="9" style="font-size: large; margin: 6px;">设置下限：</el-col>
     <el-input v-model="inputDown" placeholder="请输入下限"
-    style="width: 150px; height: 20px"></el-input>
+    style="width: 140px; height: 20px"></el-input>
   </div>
   <br>
   <el-row style="text-align: center">
@@ -168,7 +170,10 @@ export default {
   color: black;
   text-align: center;
   font-size: 20px;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 2px 2px #092b88;
+  font-size: 20px;
 }
 .el-low {
   width: 100%;

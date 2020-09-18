@@ -247,7 +247,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .hisdata {
   width: 100%;
   height: 100%;
@@ -265,10 +265,11 @@ export default {
   padding: 0px;
 }
 .hisdata-tit p {
-  color: black;
   text-align: center;
   font-size: 20px;
   margin: 2px;
+  box-shadow: 1px 1px 2px 2px #092b88;
+  font-size: 20px;
 }
 .hisdata-bady {
   width: 100%;
@@ -282,5 +283,55 @@ export default {
 }
 .hisdata-table{
   size: mini;
+  background-color: transparent;
+}
+.el-table::before {
+  height: 0;
+}
+.el-table >>> th {
+  background-color:rgba(0, 0, 0, 0.1)!important;
+  color: white;
+}
+.el-table >>> tr {
+  border: 0;
+  color: white;
+  background-color: rgba(9, 43, 136, 0.1)!important;
+}
+.el-table >>> tr:hover td {
+  background-color: transparent;
+}
+.el-table >>> tr:nth-child(2n+1) {
+  background-color: rgba(85, 86, 156, 0.1)!important;
+}
+.el-table >>> td {
+  border: 0;
+}
+.el-table >>>.el-table__fixed::before {
+  height: 0;
+}
+.el-pagination {
+  background: transparent;
+}
+.el-pagination >>> .el-pagination__total {
+  color: white;
+}
+.el-pagination >>> .btn-prev {
+  color: white!important;
+  background: transparent;
+  border: 2px solid white;
+}
+.el-pagination >>> .el-pager .number {
+  color: white!important;
+  background: transparent;
+  border: 2px solid white;
+}
+.el-pagination >>> .btn-next {
+  color: white!important;
+  background: transparent;
+  border: 2px solid white;
+}
+.el-pagination >>> .el-pagination__jump {
+  color: white!important;
+  background: transparent;
 }
 </style>
