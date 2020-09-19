@@ -33,11 +33,7 @@
             </div>
             <el-row :gutter="10">
               <el-col :span="6"><div class="grid-content bg-purple">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[0].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[0].eValue}}{{' '}}</span>
@@ -45,11 +41,7 @@
                 {{typedata[0].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[1].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[1].eValue}}{{' '}}</span>
@@ -57,11 +49,7 @@
                 {{typedata[1].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[2].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[2].eValue}}{{' '}}</span>
@@ -69,11 +57,7 @@
                 {{typedata[2].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[3].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[3].eValue}}{{' '}}</span>
@@ -83,11 +67,7 @@
             </el-row>
             <el-row :gutter="10">
               <el-col :span="6"><div class="grid-content bg-purple3">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[4].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[4].eValue}}{{' '}}</span>
@@ -95,11 +75,7 @@
                 {{typedata[4].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[5].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[5].eValue}}{{' '}}</span>
@@ -107,11 +83,7 @@
                 {{typedata[5].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[6].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[6].eValue}}{{' '}}</span>
@@ -119,11 +91,7 @@
                 {{typedata[6].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[7].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[7].eValue}}{{' '}}</span>
@@ -133,11 +101,7 @@
             </el-row>
             <el-row :gutter="10">
               <el-col :span="6"><div class="grid-content bg-purple2">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[8].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[8].eValue}}{{' '}}</span>
@@ -145,11 +109,7 @@
                 {{typedata[8].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[9].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[9].eValue}}{{' '}}</span>
@@ -157,11 +117,7 @@
                 {{typedata[9].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[10].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[10].eValue}}{{' '}}</span>
@@ -169,11 +125,7 @@
                 {{typedata[10].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[11].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[11].eValue}}{{' '}}</span>
@@ -183,11 +135,7 @@
             </el-row>
             <el-row :gutter="10">
               <el-col :span="6"><div class="grid-content bg-purple1">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[12].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[12].eValue}}{{' '}}</span>
@@ -195,11 +143,7 @@
                 {{typedata[12].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[13].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[13].eValue}}{{' '}}</span>
@@ -207,11 +151,7 @@
                 {{typedata[13].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[14].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[14].eValue}}{{' '}}</span>
@@ -219,11 +159,7 @@
                 {{typedata[14].eUnit}}</span>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
-<<<<<<< HEAD
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-=======
-                <p style="margin: 0px;font-size: 14px;color: rgb(0, 0, 0);">
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
                 {{typedata[15].eName}}:</p>
                 <span style="margin: 0px;font-size: 18px;color: rgb(255, 255, 255);">
                 {{typedata[15].eValue}}{{' '}}</span>
@@ -410,7 +346,6 @@ h4 {
   border-radius: 4px;
 }
 .bg-purple-dark {
-<<<<<<< HEAD
   background: rgba(85, 86, 156, 0.05);
 }
 .bg-purple {
@@ -424,21 +359,6 @@ h4 {
 }
 .bg-purple3 {
   background: rgba(85, 86, 156, 0.05);
-=======
-  background: rgba(25, 164, 229, 0.4);
-}
-.bg-purple {
-  background:rgba(85, 86, 156, 0.315);
-}
-.bg-purple1 {
-  background:rgba(85, 86, 156, 0.315);
-}
-.bg-purple2 {
-  background:rgba(85, 86, 156, 0.315);
-}
-.bg-purple3 {
-  background: rgba(85, 86, 156, 0.315);
->>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
 }
 .bg-purple-light {
   background: #11368d;
