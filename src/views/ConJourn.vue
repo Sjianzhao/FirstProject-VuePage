@@ -6,7 +6,11 @@
     </div>
   </el-row>
   <el-row style="margin: 10px;">
+<<<<<<< HEAD
    <el-col :span="9" style="font-size: large; margin: 6px;color: white;">选择要素：</el-col>
+=======
+   <el-col :span="9" style="font-size: large; margin: 6px;">选择要素：</el-col>
+>>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
     <el-select
     v-model="factor" placeholder="请选择要素"
     style="width: 140px; height: 20px;"
@@ -25,7 +29,11 @@
   <div style="margin: 10px; height: 36px">
     <el-col :span="9" style="font-size: large; margin: 6px;color: white;">设置下限：</el-col>
     <el-input v-model="inputDown" placeholder="请输入下限"
+<<<<<<< HEAD
     style="width: 140px; height: 20px;"></el-input>
+=======
+    style="width: 140px; height: 20px"></el-input>
+>>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
   </div>
   <br>
   <el-row style="text-align: center">

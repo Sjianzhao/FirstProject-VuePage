@@ -291,7 +291,10 @@ export default {
 .el-table >>> th {
   background-color:rgba(0, 0, 0, 0.1)!important;
   color: white;
+<<<<<<< HEAD
   padding-top: 2px;
+=======
+>>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
 }
 .el-table >>> tr {
   border: 0;
@@ -300,6 +303,7 @@ export default {
 }
 .el-table >>> tr:hover td {
   background-color: transparent;
+<<<<<<< HEAD
   padding-top: 2px;
 }
 .el-table >>> tr:nth-child(2n+1) {
@@ -309,6 +313,14 @@ export default {
 .el-table >>> td {
   border: 0;
   padding: 2px;
+=======
+}
+.el-table >>> tr:nth-child(2n+1) {
+  background-color: rgba(85, 86, 156, 0.1)!important;
+}
+.el-table >>> td {
+  border: 0;
+>>>>>>> 522c1afb1b1f4d255a79e4687e2197d851d4e1d0
 }
 .el-table >>>.el-table__fixed::before {
   height: 0;
