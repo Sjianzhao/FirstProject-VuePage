@@ -1,7 +1,7 @@
 <template>
   <div class="master">
     <div class="header">
-      <h1 style= "margin: 0;">气象监控平台</h1>
+      <h1 style= "margin: 0;  color: antiquewhite">气象监控平台</h1>
     </div>
     <div class="main">
       <div class="nav">
@@ -23,7 +23,7 @@ export default {
   background-size:cover;
   height: 100%;
   width: 100%;
-  background: url('./assets/backgroundimg.png') no-repeat center;
+  background: url('./assets/heseqipan.png') no-repeat center;
   background-size: cover;
 }
 .header {
