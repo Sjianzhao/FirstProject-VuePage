@@ -133,7 +133,7 @@
                 {{typedata[11].eUnit}}</span>
               </div></el-col>
             </el-row>
-            <el-row :gutter="10">
+            <el-row :gutter="10" style="padding:0px">
               <el-col :span="6"><div class="grid-content bg-purple1">
                 <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
                 {{typedata[12].eName}}:</p>
@@ -308,6 +308,7 @@ export default {
 .baseifmt {
   width: 100%;
   display: flex;
+  box-shadow: 1px 1px 2px 1px #092b88;
 }
 .basetitle {
   width: 100%;
@@ -374,10 +375,9 @@ h4 {
 /*显示地图的第二个块部分*/
 .chunk_1_2 {
   width: 46%;
-  height: 100%;
+  height: 97.3%;
   display: flex;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 5px;
   box-shadow: 0 0 2.5vw #237ad4 inset;
   background: linear-gradient(#1359df, #1359df) left top,
   linear-gradient(#1359df, #1359df) left top,
@@ -397,7 +397,7 @@ h4 {
 // }
 /*显示视频的第三个块部分*/
 .chunk_2_1 {
-  width: 30.0%;
+  width: 30.1%;
   display: flex;
   padding: 5px;
   box-shadow: 0 0 1.5vw #237ad4 inset;
@@ -413,7 +413,7 @@ h4 {
 .chunk_2_2 {
   top: 60%;
   left: 40%;
-  width: 46%;
+  width: 45.9%;
   display: flex;
   padding: 5px;
   box-shadow: 0 0 2.5vw #237ad4 inset;
@@ -450,7 +450,7 @@ p {
 }
 /*显示图形的第六个块部分*/
 .chunk-conjourn {
-  width: 20%;
+  width: 20.2%;
   display: flex;
   padding: 5px;
   box-shadow: 0 0 2.5vw #237ad4 inset;

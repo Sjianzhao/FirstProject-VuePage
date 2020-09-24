@@ -1,14 +1,5 @@
 <template>
   <div class="video-contant">
-    <ul class="ul-cont">
-      <li @click="videoone(this)"><a href="#videocon1">东南角</a></li>
-      <li @click="videotwo(this)"><a href="#videocon2">大门内</a></li>
-      <li @click="videothree(this)"><a href="#videocon3">视屏3</a></li>
-      <li @click="videofour(this)"><a href="#videocon4">视屏4</a></li>
-      <li @click="videofive(this)"><a href="#videocon5">视屏5</a></li>
-      <li @click="videosix(this)"><a href="#videocon6">视屏6</a></li>
-      <li @click="videoseven(this)"><a href="#videocon7">视屏7</a></li>
-    </ul>
     <div class="many-vedio" >
       <video
         :id= currentvideo
@@ -24,6 +15,33 @@
         autoplay="autoplay"
         muted="muted"
       ></video>
+      <el-button type="text" class="setting-button0" @mouseup.native="stop(0)"
+        @mousedown.native="start(0, 21)" icon="el-icon-arrow-up">
+      </el-button>
+      <el-button type="text" class="setting-button1" @mouseup.native="stop(0)"
+        @mousedown.native="start(0, 22)" icon="el-icon-arrow-down">
+      </el-button>
+      <el-button type="text" class="setting-button2" @mouseup.native="stop(0)"
+        @mousedown.native="start(0, 23)" icon="el-icon-arrow-left">
+      </el-button>
+      <el-button type="text" class="setting-button3" @mouseup.native="stop(0)"
+        @mousedown.native="start(0, 24)" icon="el-icon-arrow-right">
+      </el-button>
+      <el-button type="text" class="setting-button4" @mouseup.native="stop(0)"
+        @mousedown.native="start(0, 11)" icon="el-icon-zoom-in" >
+      </el-button>
+      <el-button type="text" class="setting-button5" @mouseup.native="stop(0)"
+        @mousedown.native="start(0, 12)" icon="el-icon-zoom-out" >
+      </el-button>
+      <el-button type="text" class="setting-button6"
+        @mousedown.native="setPreset(0, 39)" icon="el-icon-circle-plus-outline">
+      </el-button>
+      <el-button type="text" class="setting-button7"
+        @mousedown.native="setPreset(0, 8)" icon="el-icon-circle-check">
+      </el-button>
+      <el-button type="text" class="setting-button8"
+        @mousedown.native="setPreset(0, 9)" icon="el-icon-circle-close">
+      </el-button>
     </div>
   </div>
 </template>
@@ -35,7 +53,7 @@ export default {
     return {
       videoList: [{
         channel: 1,
-        flv: 'https://flvopen.ys7.com:9188/openlive/37dc3bb2e834497280293a778a1133ab.flv',
+        flv: 'ws://192.168.1.223:8888/rtsp?url=rtsp://admin:XPH123456@192.168.1.220:554/MPEG-4/ch1/main/av_stream',
       }, {
         channel: 2,
         flv: 'https://flvopen.ys7.com:9188/openlive/2843e65ebd5e423f8870146fb16de9c8.flv',
@@ -56,12 +74,13 @@ export default {
         flv: 'https://flvopen.ys7.com:9188/openlive/b0930a811b144f3dbf8067edadb27b4e.flv',
       }],
       currentvideo: 'videocon1',
+      mousrLickEvent: 0,
     };
   },
   methods: {
     videoLoad() {
       if (flvjs.isSupported()) {
-        for (let i = 0; i < 7; i += 1) {
+        for (let i = 0; i < 1; i += 1) {
           const video = document.getElementById(`videocon${i + 1}`);
           const flvPlayer = flvjs.createPlayer({
             type: 'flv',
@@ -73,100 +92,25 @@ export default {
         }
       }
     },
-    videoone() {
-      this.currentvideo = 'videocon1';
-      if (flvjs.isSupported()) {
-        const video = document.getElementById('videocon1');
-        const flvPlayer = flvjs.createPlayer({
-          type: 'flv',
-          url: this.videoList[0].flv,
-        });
-        flvPlayer.attachMediaElement(video);
-        flvPlayer.load();
-        flvPlayer.play();
-      }
+    Register() {
+      this.$http.get('http://192.168.1.223:7000/api/login?host=192.168.1.220&port=8000&username=admin&password=XPH123456');
     },
-    videotwo() {
-      this.currentvideo = 'videocon2';
-      if (flvjs.isSupported()) {
-        const video = document.getElementById(this.currentvideo);
-        const flvPlayer = flvjs.createPlayer({
-          type: 'flv',
-          url: this.videoList[1].flv,
-        });
-        flvPlayer.attachMediaElement(video);
-        flvPlayer.load();
-        flvPlayer.play();
-      }
+    start(userID, cmd) {
+      this.$http.get(`http://192.168.1.223:7000/api/ptzcontrol?userID=${userID}&ptzcommand=${cmd}&stop=0&speed=3`);
     },
-    videothree() {
-      this.currentvideo = 'videocon3';
-      if (flvjs.isSupported()) {
-        const video = document.getElementById(this.currentvideo);
-        const flvPlayer = flvjs.createPlayer({
-          type: 'flv',
-          url: this.videoList[2].flv,
-        });
-        flvPlayer.attachMediaElement(video);
-        flvPlayer.load();
-        flvPlayer.play();
-      }
+    stop(userID) {
+      this.$http.get(`http://192.168.1.223:7000/api/ptzcontrol?userID=${userID}&ptzcommand=21&stop=1&speed=3`);
     },
-    videofour() {
-      this.currentvideo = 'videocon4';
-      if (flvjs.isSupported()) {
-        const video = document.getElementById(this.currentvideo);
-        const flvPlayer = flvjs.createPlayer({
-          type: 'flv',
-          url: this.videoList[3].flv,
-        });
-        flvPlayer.attachMediaElement(video);
-        flvPlayer.load();
-        flvPlayer.play();
-      }
-    },
-    videofive() {
-      this.currentvideo = 'videocon5';
-      if (flvjs.isSupported()) {
-        const video = document.getElementById(this.currentvideo);
-        const flvPlayer = flvjs.createPlayer({
-          type: 'flv',
-          url: this.videoList[4].flv,
-        });
-        flvPlayer.attachMediaElement(video);
-        flvPlayer.load();
-        flvPlayer.play();
-      }
-    },
-    videosix() {
-      this.currentvideo = 'videocon6';
-      if (flvjs.isSupported()) {
-        const video = document.getElementById(this.currentvideo);
-        const flvPlayer = flvjs.createPlayer({
-          type: 'flv',
-          url: this.videoList[5].flv,
-        });
-        flvPlayer.attachMediaElement(video);
-        flvPlayer.load();
-        flvPlayer.play();
-      }
-    },
-    videoseven() {
-      this.currentvideo = 'videocon7';
-      if (flvjs.isSupported()) {
-        const video = document.getElementById(this.currentvideo);
-        const flvPlayer = flvjs.createPlayer({
-          type: 'flv',
-          url: this.videoList[6].flv,
-        });
-        flvPlayer.attachMediaElement(video);
-        flvPlayer.load();
-        flvPlayer.play();
-      }
+    setPreset(userID, cmd) {
+      this.$http.get(`http://192.168.1.223:7000/api/ptzpreset?userID=${userID}&ptzpresetcmd=${cmd}&presetindex=1`);
     },
   },
   mounted() {
     this.videoLoad();
+    this.Register();
+    setInterval(() => {
+      this.videoLoad();
+    }, 300000);
   },
 };
 </script>
@@ -184,19 +128,10 @@ export default {
   background: #137ee2;
   overflow: auto;
 }
-li a{
-  display: block;
-  color: rgb(8, 3, 3);
-  padding: 4px 4px;
-  text-decoration: none;
-}
-li a:hover:not(.active) {
-  background-color: rgb(87, 83, 83);
-  color: white;
-}
 .many-vedio{
-  width: 80%;
+  width: 100%;
   display: flex;
+  position: relative;
 }
 #videocon1{
   width: 100%;
@@ -220,5 +155,77 @@ li a:hover:not(.active) {
 .video-content {
   width: 100%;
   height: 100%;
+}
+.setting-button0 {
+  position: absolute;
+  right: 35px;
+  top: 25px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button1 {
+  position: absolute;
+  right: 35px;
+  top: 85px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button2 {
+  position: absolute;
+  right: 65px;
+  top: 55px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button3 {
+  position: absolute;
+  right: 5px;
+  top: 55px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button4 {
+  position: absolute;
+  right: 65px;
+  top: 5px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button5 {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button6 {
+  position: absolute;
+  right: 35px;
+  top: 55px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button7 {
+  position: absolute;
+  right: 65px;
+  top: 105px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
+}
+.setting-button8 {
+  position: absolute;
+  right: 5px;
+  top: 105px;
+  background: transparent;
+  padding: 0px;
+  margin: 2px;
 }
 </style>

@@ -104,7 +104,7 @@ export default {
           data: this.channel[15],
         }],
       });
-    }, 120000);
+    }, 61000);
     this.chartLine = echarts.init(document.getElementById('gra-chart'));
     const option = {
       tooltip: {

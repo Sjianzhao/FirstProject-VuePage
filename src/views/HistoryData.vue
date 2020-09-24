@@ -10,8 +10,8 @@
           class = "hisdata-table" :data.sync="tableData" style="width: 100%" height="100%"
         >
           <el-table-column
-          fixed prop="date" label="日期" width="105"
-          style="padding: 5px"
+          fixed prop="date" label="日期" width="110"
+          style="padding: 3px"
           >
           </el-table-column>
           <el-table-column prop="data0" :label="tableData[0].tableName[0]" width="90">
@@ -98,9 +98,9 @@ export default {
       const date = new Date();
       this.hisDataTimeMin = date.getMinutes();
       this.hisDataTimeSec = date.getSeconds();
-      if (this.hisDataTimeMin % 3 === 2) {
+      if (this.hisDataTimeMin % 10 === 9) {
         this.acquireDataFlag = 1;
-      } if (this.hisDataTimeMin % 3 === 0 && this.acquireDataFlag === 1) {
+      } if (this.hisDataTimeMin % 10 === 0 && this.acquireDataFlag === 1) {
         this.acquireDataFlag = 0;
         this.hisDateFlag += 1;
       } if (this.hisDateFlag === 6) {
@@ -308,7 +308,7 @@ export default {
 }
 .el-table >>> td {
   border: 0;
-  padding: 2px;
+  padding: 6px;
 }
 .el-table >>>.el-table__fixed::before {
   height: 0;
