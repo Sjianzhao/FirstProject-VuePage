@@ -74,7 +74,7 @@ export default {
         flv: 'https://flvopen.ys7.com:9188/openlive/b0930a811b144f3dbf8067edadb27b4e.flv',
       }],
       currentvideo: 'videocon1',
-      mousrLickEvent: 0,
+      ServeID: 666,
     };
   },
   methods: {
@@ -103,6 +103,9 @@ export default {
     },
     setPreset(userID, cmd) {
       this.$http.get(`http://192.168.1.223:7000/api/ptzpreset?userID=${userID}&ptzpresetcmd=${cmd}&presetindex=1`);
+    },
+    XphLogOut(userID) {
+      this.$http.get(`http://192.168.1.223:7000/api/logout?userID=${userID}`);
     },
   },
   mounted() {

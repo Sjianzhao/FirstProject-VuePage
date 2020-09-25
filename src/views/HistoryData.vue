@@ -2,7 +2,7 @@
   <div class="hisdata">
     <div class="hisdata-title">
       <div class="hisdata-tit">
-        <p style="color: antiquewhite"> <b>历史数据</b></p>
+        <p style="color: rgb(181,205,231);"> <b>历史数据</b></p>
       </div>
       <div class="hisdata-bady">
         <el-table
@@ -11,7 +11,7 @@
         >
           <el-table-column
           fixed prop="date" label="日期" width="110"
-          style="padding: 3px"
+          style="padding: 3px;"
           >
           </el-table-column>
           <el-table-column prop="data0" :label="tableData[0].tableName[0]" width="90">
@@ -270,6 +270,7 @@ export default {
   margin: 2px;
   box-shadow: 1px 1px 2px 2px #092b88;
   font-size: 20px;
+  background: rgba(135,205,252,0.10);
 }
 .hisdata-bady {
   width: 100%;

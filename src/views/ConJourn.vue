@@ -2,7 +2,8 @@
 <div class="con-jour">
   <el-row>
     <div class="con-title">
-      <p style="color: antiquewhite"><b>阈值设置：</b></p>
+      <p style="color: rgb(181,205,231); background: rgba(135,205,252,0.10);">
+        <b>阈值设置：</b></p>
     </div>
   </el-row>
   <el-row style="margin: 10px;">
@@ -19,13 +20,17 @@
   <div style="margin: 10px; height: 36px">
     <el-col :span="9" style="font-size: large; margin: 6px;color: white;">设置上限：</el-col>
     <el-input v-model="inputUp" placeholder="请输入上限"
-    style="width: 140px; height: 20px">
+    type="text" style="width: 140px; height: 20px; background: transparent;">
     </el-input>
   </div>
   <div style="margin: 10px; height: 36px">
     <el-col :span="9" style="font-size: large; margin: 6px;color: white;">设置下限：</el-col>
-    <el-input v-model="inputDown" placeholder="请输入下限"
-    style="width: 140px; height: 20px;"></el-input>
+    <el-input v-model="inputDown"
+      type="text"
+      placeholder="请输入下限"
+      :rows="2"
+      style="width: 140px; height: 10px;"
+    ></el-input>
   </div>
   <br>
   <el-row style="text-align: center">
@@ -172,7 +177,7 @@ export default {
 .con-title p {
   height: 50%;
   color: black;
-  text-align: center;
+  text-align:center;
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 10px;

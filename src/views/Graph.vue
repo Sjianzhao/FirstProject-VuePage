@@ -1,7 +1,7 @@
 <template>
   <div class="gra-ui">
     <div class="gra-cont">
-      <p id="gra-tit"><b>数据曲线</b></p>
+      <p id="gra-tit" style="background: rgba(135,205,252,0.10);"><b>数据曲线</b></p>
     </div>
       <div id="gra-chart" ></div>
   </div>
@@ -284,7 +284,7 @@ export default {
 }
   #gra-tit {
   width: 100%;
-  color: antiquewhite;
+  color: rgb(181,205,231);
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
