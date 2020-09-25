@@ -25,13 +25,7 @@ export default {
       map: null,
       position: [
         {
-          longitude: 116.5753, latitude: 36.0554, name: '岱岳区夏张气象观测站', devicdId: '16063554',
-        },
-        {
-          longitude: 117.0002, latitude: 35.5929, name: '岱岳区马庄气象观测站', devicdId: '16061024',
-        },
-        {
-          longitude: 116.5408, latitude: 36.1407, name: '岱岳区道朗气象观测站', devicdId: '16063554',
+          longitude: 109.801488, latitude: 40.678239, name: '昆都仑河公园观测站',
         },
       ],
       dialogPreviewVisible: false,
@@ -45,7 +39,7 @@ export default {
     const roadNet = new AMap.TileLayer.RoadNet();
     const map = new AMap.Map('container', {
       zoom: 8,
-      center: [114.397428, 30.90923],
+      center: [109.801488, 40.678239],
       resizeEnable: true,
       layers: [
         satellite,

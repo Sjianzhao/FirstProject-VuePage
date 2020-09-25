@@ -44,7 +44,7 @@ export default {
         })
         .catch();
       for (let i = 0; i < this.channelNumber; i += 1) {
-        if (this.postnumber >= 600) {
+        if (this.postnumber >= 300) {
           this.channel[i].shift();
         }
         this.channel[i].push({
