@@ -15,9 +15,9 @@
                   {{element.deviceName}}
                 </div>
                 <div class="baseid" style="width: 25%; color: antiquewhite">
-                  站点ID:
+                  站点类型:
                   <br />
-                  {{element.deviceId}}
+                  自动气象站
                 </div>
                 <div class="basetime" style="width: 40%; color: antiquewhite">
                   更新时间:
@@ -214,13 +214,23 @@ export default {
   mounted() {
     setInterval(() => {
       this.$http
-        .get('http://115.28.187.9:8005/intfa/queryData/16067968')
+        .get('http://192.168.1.223:8005/intfa/queryData/16069877')
         .then((res) => {
           if (res.data) {
             this.element = res.data;
             this.UpdaTime = res.data.entity[0].datetime;
             for (let i = 0; i < res.data.entity.length; i += 1) {
               this.typedata[i] = res.data.entity[i];
+            }
+          }
+        })
+        .catch();
+      this.$http
+        .get('http://192.168.1.223:8005/intfa/queryData/15112501')
+        .then((res) => {
+          if (res.data) {
+            for (let i = 0; i < res.data.entity.length; i += 1) {
+              this.typedata[i + 9] = res.data.entity[i];
             }
           }
         })

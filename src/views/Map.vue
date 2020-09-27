@@ -5,10 +5,13 @@
       width="300px">
     <el-card class="preview-card">
       <div slot="header">
-        <span>设备名称：{{currentDevice.deviceName}}</span>
+        <span>设备名称：{{currentDevice1.deviceName}}</span>
       </div>
-      <div v-if="currentDevice.entity">更新时间：{{currentDevice.entity[0].datetime}}</div>
-      <div v-for="(item, index) in currentDevice.entity" :key="index">
+      <div v-if="currentDevice1.entity">更新时间：{{currentDevice1.entity[0].datetime}}</div>
+      <div v-for="(item, index) in currentDevice1.entity" :key="index">
+        {{`${item.eName}: ${item.eValue} ${item.eUnit}`}}
+      </div>
+      <div v-for="(item, index) in currentDevice2.entity" :key="index">
         {{`${item.eName}: ${item.eValue} ${item.eUnit}`}}
       </div>
     </el-card>
@@ -29,7 +32,8 @@ export default {
         },
       ],
       dialogPreviewVisible: false,
-      currentDevice: {},
+      currentDevice1: {},
+      currentDevice2: {},
     };
   },
   methods: {
@@ -67,9 +71,15 @@ export default {
       marker.on('click', () => {
         this.dialogPreviewVisible = true;
         this.$http
-          .get('http://115.28.187.9:8005/intfa/queryData/16067968')
+          .get('http://192.168.1.223:8005/intfa/queryData/16069877')
           .then((res) => {
-            this.currentDevice = res.data;
+            this.currentDevice1 = res.data;
+          })
+          .catch((error) => console.log(error));
+        this.$http
+          .get('http://192.168.1.223:8005/intfa/queryData/15112501')
+          .then((res) => {
+            this.currentDevice2 = res.data;
           })
           .catch((error) => console.log(error));
       });

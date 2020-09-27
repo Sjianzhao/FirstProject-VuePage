@@ -24,27 +24,41 @@ export default {
       channelTime: [],
       channelValue: [],
       channelName: [],
-      channelNumber: 0,
       postnumber: 0,
     };
   },
   mounted() {
     setInterval(() => {
       this.$http
-        .get('http://115.28.187.9:8005/intfa/queryData/16067968')
+        .get('http://192.168.1.223:8005/intfa/queryData/16069877')
         .then((response) => {
           if (response.data) {
-            this.channelNumber = response.data.entity.length;
             for (let i = 0; i < response.data.entity.length; i += 1) {
               this.channelName[i] = response.data.entity[i].eName;
               this.channelValue[i] = response.data.entity[i].eValue;
               this.channelTime[i] = response.data.entity[i].datetime;
             }
+            this.channelTime[9] = response.data.entity[0].datetime;
+            this.channelTime[10] = response.data.entity[0].datetime;
+            this.channelTime[11] = response.data.entity[0].datetime;
+            this.channelTime[12] = response.data.entity[0].datetime;
+            this.channelTime[13] = response.data.entity[0].datetime;
           }
         })
         .catch();
-      for (let i = 0; i < this.channelNumber; i += 1) {
-        if (this.postnumber >= 300) {
+      this.$http
+        .get('http://192.168.1.223:8005/intfa/queryData/15112501')
+        .then((response) => {
+          if (response.data) {
+            for (let i = 0; i < response.data.entity.length; i += 1) {
+              this.channelName[i + 9] = response.data.entity[i].eName;
+              this.channelValue[i + 9] = response.data.entity[i].eValue;
+            }
+          }
+        })
+        .catch();
+      for (let i = 0; i < 14; i += 1) {
+        if (this.postnumber >= 600) {
           this.channel[i].shift();
         }
         this.channel[i].push({

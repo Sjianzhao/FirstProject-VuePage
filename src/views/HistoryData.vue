@@ -42,10 +42,6 @@
           </el-table-column>
           <el-table-column prop="data13" :label="tableData[0].tableName[13]" width="90">
           </el-table-column>
-          <el-table-column prop="data14" :label="tableData[0].tableName[14]" width="90">
-          </el-table-column>
-          <el-table-column prop="data15" :label="tableData[0].tableName[15]" width="90">
-          </el-table-column>
         </el-table>
       </div>
     </div>
@@ -57,7 +53,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.$http
-        .get('http://115.28.187.9:8005/intfa/queryData/16067968')
+        .get('http://192.168.1.223:8005/intfa/queryData/16069877')
         .then((res) => {
           if (res.data) {
             if (this.hisDateFlag === 0) {
@@ -95,12 +91,50 @@ export default {
           }
         })
         .catch();
+      this.$http
+        .get('http://192.168.1.223:8005/intfa/queryData/15112501')
+        .then((res) => {
+          if (res.data) {
+            if (this.hisDateFlag === 0) {
+              for (let i = 0; i < res.data.entity.length; i += 1) {
+                this.tableData[0][`data${i + 9}`] = res.data.entity[i].eValue;
+                this.tableData[0].tableName.splice(i + 9, 1, res.data.entity[i].eName);
+              }
+            } else if (this.hisDateFlag === 1) {
+              this.tableData[1].date = res.data.entity[1].datetime;
+              for (let i = 0; i < res.data.entity.length; i += 1) {
+                this.tableData[1][`data${i + 9}`] = res.data.entity[i].eValue;
+              }
+            } else if (this.hisDateFlag === 2) {
+              this.tableData[2].date = res.data.entity[2].datetime;
+              for (let i = 0; i < res.data.entity.length; i += 1) {
+                this.tableData[2][`data${i + 9}`] = res.data.entity[i].eValue;
+              }
+            } else if (this.hisDateFlag === 3) {
+              this.tableData[3].date = res.data.entity[3].datetime;
+              for (let i = 0; i < res.data.entity.length; i += 1) {
+                this.tableData[3][`data${i + 9}`] = res.data.entity[i].eValue;
+              }
+            } else if (this.hisDateFlag === 4) {
+              this.tableData[4].date = res.data.entity[4].datetime;
+              for (let i = 0; i < res.data.entity.length; i += 1) {
+                this.tableData[4][`data${i + 9}`] = res.data.entity[i].eValue;
+              }
+            } else if (this.hisDateFlag === 5) {
+              this.tableData[5].date = res.data.entity[5].datetime;
+              for (let i = 0; i < res.data.entity.length; i += 1) {
+                this.tableData[5][`data${i + 9}`] = res.data.entity[i].eValue;
+              }
+            }
+          }
+        })
+        .catch();
       const date = new Date();
       this.hisDataTimeMin = date.getMinutes();
       this.hisDataTimeSec = date.getSeconds();
-      if (this.hisDataTimeMin % 10 === 9) {
+      if (this.hisDataTimeMin % 30 === 29) {
         this.acquireDataFlag = 1;
-      } if (this.hisDataTimeMin % 10 === 0 && this.acquireDataFlag === 1) {
+      } if (this.hisDataTimeMin % 30 === 0 && this.acquireDataFlag === 1) {
         this.acquireDataFlag = 0;
         this.hisDateFlag += 1;
       } if (this.hisDateFlag === 6) {
@@ -131,11 +165,9 @@ export default {
           data11: '',
           data12: '',
           data13: '',
-          data14: '',
-          data15: '',
           tableName: [
             '---', '---', '---', '---', '---', '---', '---', '---',
-            '---', '---', '---', '---', '---', '---', '---', '---'],
+            '---', '---', '---', '---', '---', '---'],
         }, {
           date: '',
           data0: '',
@@ -152,8 +184,6 @@ export default {
           data11: '',
           data12: '',
           data13: '',
-          data14: '',
-          data15: '',
         }, {
           date: '',
           data0: '',
@@ -170,8 +200,6 @@ export default {
           data11: '',
           data12: '',
           data13: '',
-          data14: '',
-          data15: '',
         }, {
           date: '',
           data0: '',
@@ -188,8 +216,6 @@ export default {
           data11: '',
           data12: '',
           data13: '',
-          data14: '',
-          data15: '',
         }, {
           date: '',
           data0: '',
@@ -206,8 +232,6 @@ export default {
           data11: '',
           data12: '',
           data13: '',
-          data14: '',
-          data15: '',
         }, {
           date: '',
           data0: '',
@@ -224,8 +248,6 @@ export default {
           data11: '',
           data12: '',
           data13: '',
-          data14: '',
-          data15: '',
         },
       ],
     };
@@ -233,16 +255,6 @@ export default {
   methods: {
   },
   created() {
-    this.$http
-      .get('http://115.28.187.9:8005/intfa/queryData/16067968')
-      .then((res) => {
-        if (res.data) {
-          for (let i = 0; i < res.data.entity.length; i += 1) {
-            this.tableData[0].tableName[i] = res.data.entity[i].eName;
-          }
-        }
-      })
-      .catch();
   },
 };
 </script>

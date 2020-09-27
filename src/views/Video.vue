@@ -74,7 +74,7 @@ export default {
         flv: 'https://flvopen.ys7.com:9188/openlive/b0930a811b144f3dbf8067edadb27b4e.flv',
       }],
       currentvideo: 'videocon1',
-      ServeID: 666,
+      ServeID: 300,
     };
   },
   methods: {
@@ -93,7 +93,15 @@ export default {
       }
     },
     Register() {
-      this.$http.get('http://192.168.1.223:7000/api/login?host=192.168.1.220&port=8000&username=admin&password=XPH123456');
+      this.$http
+        .get('http://192.168.1.223:7000/api/login?host=192.168.1.220&port=8000&username=admin&password=XPH123456')
+        .then((res) => {
+          console.log(121212);
+          if (res.data) {
+            this.ServeID = res.data;
+          }
+        })
+        .catch();
     },
     start(userID, cmd) {
       this.$http.get(`http://192.168.1.223:7000/api/ptzcontrol?userID=${userID}&ptzcommand=${cmd}&stop=0&speed=3`);
@@ -107,6 +115,9 @@ export default {
     XphLogOut(userID) {
       this.$http.get(`http://192.168.1.223:7000/api/logout?userID=${userID}`);
     },
+  },
+  beforeDestroy() {
+    this.XphLogOut();
   },
   mounted() {
     this.videoLoad();
