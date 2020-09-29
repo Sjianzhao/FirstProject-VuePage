@@ -13,7 +13,7 @@
         x5-video-orientation="portraint"
         class="video-contant"
         autoplay="autoplay"
-        muted="muted"
+        muted
       ></video>
       <el-button type="text" class="setting-button0" @mouseup.native="stop(0)"
         @mousedown.native="start(0, 21)" icon="el-icon-arrow-up">
@@ -96,11 +96,9 @@ export default {
       this.$http
         .get('http://192.168.1.223:7000/api/login?host=192.168.1.220&port=8000&username=admin&password=XPH123456')
         .then((result) => {
-          console.log(111222);
           this.ServeID = result.data;
         })
         .catch();
-      console.log(111222);
     },
     start(userID, cmd) {
       this.$http.get(`http://192.168.1.223:7000/api/ptzcontrol?userID=${userID}&ptzcommand=${cmd}&stop=0&speed=3`);
@@ -116,7 +114,7 @@ export default {
     },
   },
   beforeDestroy() {
-    this.XphLogOut(2);
+    this.XphLogOut(this.ServeID.result);
   },
   mounted() {
     this.videoLoad();
