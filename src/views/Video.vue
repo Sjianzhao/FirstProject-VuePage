@@ -53,7 +53,7 @@ export default {
     return {
       videoList: [{
         channel: 1,
-        flv: 'ws://192.168.1.223:8888/rtsp?url=rtsp://admin:XPH123456@192.168.1.220:554/MPEG-4/ch1/main/av_stream',
+        flv: 'ws://192.168.1.223:8888/rtsp?url=rtsp://admin:XPH123456@192.168.1.220:554/H264/ch1/main/av_stream',
       }, {
         channel: 2,
         flv: 'https://flvopen.ys7.com:9188/openlive/2843e65ebd5e423f8870146fb16de9c8.flv',
@@ -74,7 +74,7 @@ export default {
         flv: 'https://flvopen.ys7.com:9188/openlive/b0930a811b144f3dbf8067edadb27b4e.flv',
       }],
       currentvideo: 'videocon1',
-      ServeID: 300,
+      ServeID: 10,
     };
   },
   methods: {
@@ -95,13 +95,12 @@ export default {
     Register() {
       this.$http
         .get('http://192.168.1.223:7000/api/login?host=192.168.1.220&port=8000&username=admin&password=XPH123456')
-        .then((res) => {
-          console.log(121212);
-          if (res.data) {
-            this.ServeID = res.data;
-          }
+        .then((result) => {
+          console.log(111222);
+          this.ServeID = result.data;
         })
         .catch();
+      console.log(111222);
     },
     start(userID, cmd) {
       this.$http.get(`http://192.168.1.223:7000/api/ptzcontrol?userID=${userID}&ptzcommand=${cmd}&stop=0&speed=3`);
@@ -117,7 +116,7 @@ export default {
     },
   },
   beforeDestroy() {
-    this.XphLogOut();
+    this.XphLogOut(2);
   },
   mounted() {
     this.videoLoad();

@@ -240,7 +240,7 @@ export default {
   data() {
     return {
       element: {},
-      UpdaTime: '',
+      UpdaTime: ' ',
       typedata: [
         { eName: '-----', eValue: '-----', eUnit: ' ' },
         { eName: '-----', eValue: '-----', eUnit: ' ' },

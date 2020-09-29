@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0px;
+}
 .master {
   background-size:cover;
   height: 100%;
