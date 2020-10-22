@@ -35,6 +35,11 @@ const routes = [
     name: 'ConJourn',
     component: () => import('../views/ConJourn.vue'),
   },
+  {
+    path: '/DevIndex',
+    name: 'DevIndex',
+    component: () => import('../views/DevIndex.vue'),
+  },
 ];
 
 const router = new VueRouter({

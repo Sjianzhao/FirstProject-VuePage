@@ -1,7 +1,17 @@
 <template>
   <div class="master">
     <div class="header">
-      <h1 style= "margin: 10px;  color: rgb(181,205,231);">昆都仑河国家湿地公园监控平台</h1>
+      <el-row style="height: 100%">
+        <el-col :span="2" class="devenmu">
+          <div>
+            <Devindex></Devindex>
+          </div></el-col>
+        <el-col :span="22">
+          <div>
+            <h1 style= "margin: 10px;  color: rgb(181,205,231);">昆都仑河国家湿地公园监控平台</h1>
+          </div>
+        </el-col>
+      </el-row>
     </div>
     <div class="main">
       <div class="nav">
@@ -14,7 +24,12 @@
 </template>
 
 <script>
+import Devindex from './views/DevIndex.vue';
+
 export default {
+  components: {
+    Devindex,
+  },
 };
 </script>
 
@@ -39,6 +54,7 @@ body {
 .header {
   box-shadow: 1px 1px 1px rgba(8, 8, 8, 0.8);
   height: 7%;
+  width: 100%;
 }
 .main {
   width: 100%;

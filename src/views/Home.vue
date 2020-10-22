@@ -270,7 +270,7 @@
     <div class="content_1">
       <div class="line_2">
         <div class="chunk_2_1">
-          <TestVideo></TestVideo>
+          <!--<TestVideo></TestVideo>!-->
         </div>
         <div style=" width: 2%; display: flex; padding: 0px;"></div>
         <div class="chunk_2_2">
@@ -289,7 +289,7 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import TestMap from './Map.vue';
-import TestVideo from './Video.vue';
+// import TestVideo from './Video.vue';
 import TextGraph from './Graph.vue';
 import TextHistoryData from './HistoryData.vue';
 import TextConJourn from './ConJourn.vue';
@@ -359,7 +359,7 @@ export default {
   },
   components: {
     TestMap,
-    TestVideo,
+    //  TestVideo,
     TextGraph,
     TextHistoryData,
     TextConJourn,
