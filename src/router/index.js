@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Home/',
     component: Home,
   },
   {
@@ -39,6 +39,11 @@ const routes = [
     path: '/DevIndex',
     name: 'DevIndex',
     component: () => import('../views/DevIndex.vue'),
+  },
+  {
+    path: '/DevMean',
+    name: 'DevMean',
+    component: () => import('../views/DevMean.vue'),
   },
 ];
 

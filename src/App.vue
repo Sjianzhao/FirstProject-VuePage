@@ -4,11 +4,11 @@
       <el-row style="height: 100%">
         <el-col :span="2" class="devenmu">
           <div>
-            <Devindex></Devindex>
+            <Devindex @transferUser="getId"></Devindex>
           </div></el-col>
         <el-col :span="22">
           <div>
-            <h1 style= "margin: 10px;  color: rgb(181,205,231);">昆都仑河国家湿地公园监控平台</h1>
+            <h1 style= "margin: 10px;  color: rgb(181,205,231);">XXXX公园监控平台</h1>
           </div>
         </el-col>
       </el-row>
@@ -17,7 +17,7 @@
       <div class="nav">
       </div>
       <div class="content">
-        <router-view />
+        <router-view :changeVal="ResID"></router-view>
       </div>
     </div>
   </div>
@@ -27,8 +27,20 @@
 import Devindex from './views/DevIndex.vue';
 
 export default {
+  data() {
+    return {
+      ResID: '2233',
+    };
+  },
   components: {
     Devindex,
+  },
+  methods: {
+    getId(msg) {
+      this.ResID = msg;
+    },
+  },
+  watch: {
   },
 };
 </script>
@@ -48,7 +60,7 @@ body {
   background-size:cover;
   height: 100%;
   width: 100%;
-  background: url('./assets/heseqipan.png') no-repeat center;
+  background: url('./assets/tianyan.jpg') no-repeat center;
   background-size: cover;
 }
 .header {

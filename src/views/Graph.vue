@@ -27,52 +27,30 @@ export default {
       postnumber: 0,
       channelLestFlag: '0',
       channelLestTime: '0',
+      changeId: 0,
     };
   },
   mounted() {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
+        .get(`http://47.105.215.208:8005/intfa/queryData/${this.changeId}`)
         .then((response) => {
           if (response.data) {
             for (let i = 0; i < response.data.entity.length; i += 1) {
-              this.channelName[i] = response.data.entity[i].eName;
-              this.channelValue[i] = response.data.entity[i].eValue;
+              this.channelName.splice(i, 1, response.data.entity[i].eName);
+              this.channelValue.splice(i, 1, response.data.entity[i].eValue);
+              this.channelTime.splice(i, 1, response.data.entity[0].datetime);
             }
-          }
-        })
-        .catch();
-      this.$http
-        // .get('http://192.168.1.223:8005/intfa/queryData/15112501')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
-        .then((response) => {
-          if (response.data) {
-            for (let i = 0; i < response.data.entity.length; i += 1) {
-              this.channelName[i + 9] = response.data.entity[i].eName;
-              this.channelValue[i + 9] = response.data.entity[i].eValue;
-              this.channelTime[i + 9] = response.data.entity[0].datetime;
-            }
-            this.channelTime[0] = response.data.entity[0].datetime;
-            this.channelTime[1] = response.data.entity[0].datetime;
-            this.channelTime[2] = response.data.entity[0].datetime;
-            this.channelTime[3] = response.data.entity[0].datetime;
-            this.channelTime[4] = response.data.entity[0].datetime;
-            this.channelTime[5] = response.data.entity[0].datetime;
-            this.channelTime[6] = response.data.entity[0].datetime;
-            this.channelTime[7] = response.data.entity[0].datetime;
-            this.channelTime[8] = response.data.entity[0].datetime;
             this.channelLestFlag = response.data.entity[0].datetime;
           }
         })
         .catch();
-      for (let i = 0; i < 15; i += 1) {
-        if (this.postnumber >= 6000) {
-          if (this.channelLestTime !== this.channelTime[i]) {
+      if (this.channelLestTime !== this.channelTime[0]) {
+        for (let i = 0; i < 15; i += 1) {
+          if (this.postnumber >= 6000) {
             this.channel[i].shift();
           }
-        }
-        if (this.channelLestTime !== this.channelTime[i]) {
           this.channel[i].push({
             name: this.channelName[i],
             value: [this.channelTime[i], this.channelValue[i]],
@@ -296,6 +274,23 @@ export default {
     this.chartLine.setOption(option);
   },
   methods: {
+  },
+  computed: {
+    NewDevID() {
+      return this.$store.state.NewDevID;
+    },
+  },
+  watch: {
+    NewDevID() {
+      //  console.log(this.NewDevID);
+      this.changeId = this.NewDevID;
+      //  设备更换后清空数组
+      for (let j = 0; j < 16; j += 1) {
+        while (this.channel[j].length !== 0) {
+          this.channel[j].shift();
+        }
+      }
+    },
   },
 };
 </script>

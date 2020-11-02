@@ -18,5 +18,6 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-param-reassign': 'off',
     'prefer-template': 'off',
+    'no-eval': 'off',
   },
 };

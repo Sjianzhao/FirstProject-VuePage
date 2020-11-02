@@ -10,39 +10,39 @@
           class = "hisdata-table" :data.sync="tableData" style="width: 100%" height="100%"
         >
           <el-table-column
-          fixed prop="date" label="日期" width="110"
+          fixed prop="date[0]" label="日期" width="110"
           style="padding: 3px;"
           >
           </el-table-column>
-          <el-table-column prop="data0" :label="tableData[0].tableName[0]" width="80">
+          <el-table-column prop="data[0]" :label="tableData[0].tableName[0]" width="80">
           </el-table-column>
-          <el-table-column prop="data1" :label="tableData[0].tableName[1]" width="80">
+          <el-table-column prop="data[1]" :label="tableData[0].tableName[1]" width="80">
           </el-table-column>
-          <el-table-column prop="data2" :label="tableData[0].tableName[2]" width="80">
+          <el-table-column prop="data[2]" :label="tableData[0].tableName[2]" width="80">
           </el-table-column>
-          <el-table-column prop="data3" :label="tableData[0].tableName[3]" width="80">
+          <el-table-column prop="data[3]" :label="tableData[0].tableName[3]" width="80">
           </el-table-column>
-          <el-table-column prop="data4" :label="tableData[0].tableName[4]" width="80">
+          <el-table-column prop="data[4]" :label="tableData[0].tableName[4]" width="80">
           </el-table-column>
-          <el-table-column prop="data5" :label="tableData[0].tableName[5]" width="80">
+          <el-table-column prop="data[5]" :label="tableData[0].tableName[5]" width="80">
           </el-table-column>
-          <el-table-column prop="data6" :label="tableData[0].tableName[6]" width="80">
+          <el-table-column prop="data[6]" :label="tableData[0].tableName[6]" width="80">
           </el-table-column>
-          <el-table-column prop="data7" :label="tableData[0].tableName[7]" width="80">
+          <el-table-column prop="data[7]" :label="tableData[0].tableName[7]" width="80">
           </el-table-column>
-          <el-table-column prop="data8" :label="tableData[0].tableName[8]" width="90">
+          <el-table-column prop="data[8]" :label="tableData[0].tableName[8]" width="90">
           </el-table-column>
-          <el-table-column prop="data9" :label="tableData[0].tableName[9]" width="80">
+          <el-table-column prop="data[9]" :label="tableData[0].tableName[9]" width="80">
           </el-table-column>
-          <el-table-column prop="data10" :label="tableData[0].tableName[10]" width="80">
+          <el-table-column prop="data[10]" :label="tableData[0].tableName[10]" width="80">
           </el-table-column>
-          <el-table-column prop="data11" :label="tableData[0].tableName[11]" width="80">
+          <el-table-column prop="data[11]" :label="tableData[0].tableName[11]" width="80">
           </el-table-column>
-          <el-table-column prop="data12" :label="tableData[0].tableName[12]" width="80">
+          <el-table-column prop="data[12]" :label="tableData[0].tableName[12]" width="80">
           </el-table-column>
-          <el-table-column prop="data13" :label="tableData[0].tableName[13]" width="80">
+          <el-table-column prop="data[13]" :label="tableData[0].tableName[13]" width="80">
           </el-table-column>
-          <el-table-column prop="data14" :label="tableData[0].tableName[14]" width="80">
+          <el-table-column prop="data[14]" :label="tableData[0].tableName[14]" width="80">
           </el-table-column>
         </el-table>
       </div>
@@ -56,129 +56,64 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
+        .get(`http://47.105.215.208:8005/intfa/queryData/${this.NewID}`)
         .then((res) => {
           if (res.data) {
             if (this.hisDateFlag === 0) {
+              this.tableData[0].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                // this.tableData[0].date = res.data.entity[0].datetime;
-                this.tableData[0][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[0].data.splice(i, 1, res.data.entity[i].eValue);
                 this.tableData[0].tableName.splice(i, 1, res.data.entity[i].eName);
               }
             } else if (this.hisDateFlag === 1) {
-              // this.tableData[1].date = res.data.entity[0].datetime;
+              this.tableData[1].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[1][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[1].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 2) {
-              // this.tableData[2].date = res.data.entity[0].datetime;
+              this.tableData[2].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[2][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[2].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 3) {
-              // this.tableData[3].date = res.data.entity[0].datetime;
+              this.tableData[3].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[3][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[3].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 4) {
-              // this.tableData[4].date = res.data.entity[0].datetime;
+              this.tableData[4].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[4][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[4].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 5) {
-              // this.tableData[5].date = res.data.entity[0].datetime;
+              this.tableData[5].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[5][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[5].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 6) {
-              // this.tableData[6].date = res.data.entity[0].datetime;
+              this.tableData[6].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[6][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[6].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 7) {
-              // this.tableData[7].date = res.data.entity[0].datetime;
+              this.tableData[7].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[7][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[7].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 8) {
-              // this.tableData[8].date = res.data.entity[0].datetime;
+              this.tableData[8].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[8][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[8].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 9) {
-              // this.tableData[9].date = res.data.entity[0].datetime;
+              this.tableData[9].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[9][`data${i}`] = res.data.entity[i].eValue;
+                this.tableData[9].data.splice(i, 1, res.data.entity[i].eValue);
               }
             } else if (this.hisDateFlag === 10) {
-              // this.tableData[10].date = res.data.entity[0].datetime;
+              this.tableData[10].date.splice(0, 1, res.data.entity[0].datetime);
               for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[10][`data${i}`] = res.data.entity[i].eValue;
-              }
-            }
-          }
-        })
-        .catch();
-      this.$http
-        // .get('http://192.168.1.223:8005/intfa/queryData/15112501')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
-        .then((res) => {
-          if (res.data) {
-            if (this.hisDateFlag === 0) {
-              this.tableData[0].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[0][`data${i + 9}`] = res.data.entity[i].eValue;
-                this.tableData[0].tableName.splice(i + 9, 1, res.data.entity[i].eName);
-              }
-            } else if (this.hisDateFlag === 1) {
-              this.tableData[1].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[1][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 2) {
-              this.tableData[2].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[2][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 3) {
-              this.tableData[3].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[3][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 4) {
-              this.tableData[4].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[4][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 5) {
-              this.tableData[5].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[5][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 6) {
-              this.tableData[6].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[6][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 7) {
-              this.tableData[7].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[7][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 8) {
-              this.tableData[8].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[8][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 9) {
-              this.tableData[9].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[9][`data${i + 9}`] = res.data.entity[i].eValue;
-              }
-            } else if (this.hisDateFlag === 10) {
-              this.tableData[10].date = res.data.entity[0].datetime;
-              for (let i = 0; i < res.data.entity.length; i += 1) {
-                this.tableData[10][`data${i + 9}`] = res.data.entity[i].eValue;
+                this.tableData[10].data.splice(i, 1, res.data.entity[i].eValue);
               }
             }
           }
@@ -199,201 +134,48 @@ export default {
   },
   data() {
     return {
+      NewID: 0,
       hisDataTimeMin: 0,
       hisDataTimeSec: 0,
       hisDateFlag: 0,
       acquireDataFlag: 0,
       tableData: [
         {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
           tableName: [
             '---', '---', '---', '---', '---', '---', '---', '---',
             '---', '---', '---', '---', '---', '---'],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         }, {
-          date: '',
-          data0: '',
-          data1: '',
-          data2: '',
-          data3: '',
-          data4: '',
-          data5: '',
-          data6: '',
-          data7: '',
-          data8: '',
-          data9: '',
-          data10: '',
-          data11: '',
-          data12: '',
-          data13: '',
-          data14: '',
+          date: [],
+          data: [],
         },
       ],
     };
@@ -401,6 +183,29 @@ export default {
   methods: {
   },
   created() {
+  },
+  computed: {
+    NewDevID() {
+      return this.$store.state.NewDevID;
+    },
+  },
+  watch: {
+    NewDevID() {
+      //  console.log(this.NewDevID);
+      this.NewID = this.NewDevID;
+      //  设备更换后清空数组
+      for (let j = 0; j < this.tableData.length; j += 1) {
+        while (this.tableData[j].data.length !== 0) {
+          this.tableData[j].data.shift();
+        }
+        this.tableData[j].date.shift();
+        if (j === 0) {
+          while (this.tableData[0].tableName.length !== 0) {
+            this.tableData[0].tableName.shift();
+          }
+        }
+      }
+    },
   },
 };
 </script>

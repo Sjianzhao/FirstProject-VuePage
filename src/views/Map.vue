@@ -25,13 +25,13 @@ export default {
       map: null,
       position: [
         {
-          longitude: 102.267186, latitude: 26.378425, name: '渗压位移观测站', devicdId: '16069029',
+          longitude: 114.267186, latitude: 30.378425, name: '渗压位移观测站', devicdId: '16069029',
         },
         {
-          longitude: 102.270444, latitude: 26.379811, name: '液位雨量观测站', devicdId: '16069044',
+          longitude: 113.270444, latitude: 30.379811, name: '液位雨量观测站', devicdId: '16069044',
         },
         {
-          longitude: 102.266494, latitude: 26.378825, name: '滑坡观测站', devicdId: '16068992',
+          longitude: 113.266494, latitude: 31.378825, name: '滑坡观测站', devicdId: '16068992',
         },
       ],
       dialogPreviewVisible: false,
@@ -45,7 +45,8 @@ export default {
     const roadNet = new AMap.TileLayer.RoadNet();
     const map = new AMap.Map('container', {
       zoom: 7,
-      center: [102.267186, 26.378425],
+      center: [114.267186, 30.378425],
+      viewMode: '3D',
       resizeEnable: true,
       layers: [
         satellite,

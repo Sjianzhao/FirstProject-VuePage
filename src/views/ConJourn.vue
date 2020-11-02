@@ -54,26 +54,13 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
+        .get(`http://47.105.215.208:8005/intfa/queryData/${this.changeId}`)
         .then((res) => {
           if (res.data) {
             for (let i = 0; i < res.data.entity.length; i += 1) {
               this.options[i].label = res.data.entity[i].eName;
               this.options[i].myValue = res.data.entity[i].eValue;
               this.options[i].value = i;
-            }
-          }
-        })
-        .catch();
-      this.$http
-        // .get('http://192.168.1.223:8005/intfa/queryData/15112501')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
-        .then((res) => {
-          if (res.data) {
-            for (let i = 0; i < res.data.entity.length; i += 1) {
-              this.options[i + 9].label = res.data.entity[i].eName;
-              this.options[i + 9].myValue = res.data.entity[i].eValue;
-              this.options[i + 9].value = i + 9;
             }
           }
         })
@@ -104,6 +91,7 @@ export default {
   },
   data() {
     return {
+      changeId: 0,
       inputUp: '',
       inputDown: '',
       factor: '',
@@ -111,63 +99,47 @@ export default {
       stateFlag: 0,
       conState: '状态',
       options: [{
-        value: '',
+        value: 'a',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: 'b',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: 'c',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: 'd',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: ' ',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: ' ',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: ' ',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: ' ',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: ' ',
         label: '',
         myValue: 0,
       }, {
-        value: '',
+        value: ' ',
         label: '',
         myValue: 0,
       }, {
-        value: '',
-        label: '',
-        myValue: 0,
-      }, {
-        value: '',
-        label: '',
-        myValue: 0,
-      }, {
-        value: '',
-        label: '',
-        myValue: 0,
-      }, {
-        value: '',
-        label: '',
-        myValue: 0,
-      }, {
-        value: '',
+        value: ' ',
         label: '',
         myValue: 0,
       }],
@@ -177,6 +149,17 @@ export default {
     setThresholdValue() {
       this.stateFlag = 1;
       this.setFlag = 1;
+    },
+  },
+  computed: {
+    NewDevID() {
+      return this.$store.state.NewDevID;
+    },
+  },
+  watch: {
+    NewDevID() {
+    //  console.log(this.NewDevID);
+      this.changeId = this.NewDevID;
     },
   },
 };

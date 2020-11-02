@@ -42,7 +42,7 @@
                     <div id="stockGraph" width="20" height="20"></div>
                   </div>
                   <div style = "font-size: 14px; text-align: center;">
-                    {{UpdaTime}}
+                    {{UpdaTime[0].datetime}}
                   </div>
                 </div>
               </div>
@@ -56,49 +56,49 @@
               <el-col :span="6"><div class="grid-content bg-purple">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[0].eName}}:</p>
+                  {{typedata[0].eName[0]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[0].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[0]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[0].eUnit}}</span>
+                  {{typedata[0].eUnit[0]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[1].eName}}:</p>
+                  {{typedata[0].eName[1]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[1].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[1]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[1].eUnit}}</span>
+                  {{typedata[0].eUnit[1]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[2].eName}}:</p>
+                  {{typedata[0].eName[2]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[2].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[2]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[2].eUnit}}</span>
+                  {{typedata[0].eUnit[2]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[3].eName}}:</p>
+                  {{typedata[0].eName[3]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[3].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[3]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[3].eUnit}}</span>
+                  {{typedata[0].eUnit[3]}}</span>
                 </div>
               </div></el-col>
             </el-row>
@@ -106,49 +106,49 @@
               <el-col :span="6"><div class="grid-content bg-purple3">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[4].eName}}:</p>
+                  {{typedata[0].eName[4]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[4].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[4]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[4].eUnit}}</span>
+                  {{typedata[0].eUnit[4]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[5].eName}}:</p>
+                  {{typedata[0].eName[5]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[5].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[5]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[5].eUnit}}</span>
+                  {{typedata[0].eUnit[5]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[6].eName}}:</p>
+                  {{typedata[0].eName[6]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[6].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[6]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[6].eUnit}}</span>
+                  {{typedata[0].eUnit[6]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[7].eName}}:</p>
+                  {{typedata[0].eName[7]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[7].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[7]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[7].eUnit}}</span>
+                  {{typedata[0].eUnit[7]}}</span>
                 </div>
               </div></el-col>
             </el-row>
@@ -156,49 +156,49 @@
               <el-col :span="6"><div class="grid-content bg-purple2">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[8].eName}}:</p>
+                  {{typedata[0].eName[8]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[8].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[8]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[8].eUnit}}</span>
+                  {{typedata[0].eUnit[8]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[9].eName}}:</p>
+                  {{typedata[0].eName[9]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[9].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[9]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[9].eUnit}}</span>
+                  {{typedata[0].eUnit[9]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[10].eName}}:</p>
+                  {{typedata[0].eName[10]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[10].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[10]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[10].eUnit}}</span>
+                  {{typedata[0].eUnit[10]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[11].eName}}:</p>
+                  {{typedata[0].eName[11]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[11].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[11]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[11].eUnit}}</span>
+                  {{typedata[0].eUnit[11]}}</span>
                 </div>
               </div></el-col>
             </el-row>
@@ -206,49 +206,49 @@
               <el-col :span="6"><div class="grid-content bg-purple1">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[12].eName}}:</p>
+                  {{typedata[0].eName[12]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[12].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[12]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[12].eUnit.substring(0,2)}}</span>
+                  {{typedata[0].eUnit[12].substring(0,2)}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[13].eName}}:</p>
+                  {{typedata[0].eName[13]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[13].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[13]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[13].eUnit}}</span>
+                  {{typedata[0].eUnit[13]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[14].eName}}:</p>
+                  {{typedata[0].eName[14]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[14].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[14]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[14].eUnit}}</span>
+                  {{typedata[0].eUnit[14]}}</span>
                 </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
                 <div style="background: rgba(135,205,252,0.20);">
                   <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                  {{typedata[15].eName}}:</p>
+                  {{typedata[0].eName[15]}}:</p>
                 </div>
                 <div>
                   <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                  {{typedata[15].eValue}}{{' '}}</span>
+                  {{typedata[0].eValue[15]}}{{' '}}</span>
                   <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                  {{typedata[15].eUnit}}</span>
+                  {{typedata[0].eUnit[15]}}</span>
                 </div>
               </div></el-col>
             </el-row>
@@ -270,6 +270,7 @@
     <div class="content_1">
       <div class="line_2">
         <div class="chunk_2_1">
+          <DevMean></DevMean>
           <!--<TestVideo></TestVideo>!-->
         </div>
         <div style=" width: 2%; display: flex; padding: 0px;"></div>
@@ -293,6 +294,7 @@ import TestMap from './Map.vue';
 import TextGraph from './Graph.vue';
 import TextHistoryData from './HistoryData.vue';
 import TextConJourn from './ConJourn.vue';
+import DevMean from './DevMean.vue';
 
 export default {
   name: 'Home',
@@ -300,81 +302,71 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
+        .get(`http://47.105.215.208:8005/intfa/queryData/${this.changeId}`)
         .then((res) => {
           if (res.data) {
             this.element = res.data;
+            this.UpdaTime[0].datetime.splice(0, 1, res.data.entity[0].datetime);
             for (let i = 0; i < res.data.entity.length; i += 1) {
-              this.typedata[i] = res.data.entity[i];
-            }
-          }
-        })
-        .catch();
-      this.$http
-        // .get('http://192.168.1.223:8005/intfa/queryData/15112501')
-        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
-        .then((res) => {
-          if (res.data) {
-            this.UpdaTime = res.data.entity[0].datetime;
-            for (let i = 0; i < res.data.entity.length; i += 1) {
-              this.typedata[i + 9] = res.data.entity[i];
+              // this.typedata[i] = res.data.entity[i];
+              // 需要响应式的
+              this.typedata[0].eName.splice(i, 1, res.data.entity[i].eName);
+              this.typedata[0].eValue.splice(i, 1, res.data.entity[i].eValue);
+              this.typedata[0].eUnit.splice(i, 1, res.data.entity[i].eUnit);
             }
           }
         })
         .catch();
     }, 3000);
-    const canvas = document.getElementById('canvas');
-    if (canvas.getContext) {
-      const ctx = canvas.getContext('2d');
-      ctx.beginPath();
-      ctx.moveTo(75, 50);
-      ctx.lineTo(100, 75);
-      ctx.lineTo(100, 25);
-      ctx.fill();
-    }
   },
   data() {
     return {
       element: {},
-      UpdaTime: ' ',
+      UpdaTime: [{
+        datetime: [],
+      }],
       typedata: [
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
-        { eName: '-----', eValue: '-----', eUnit: ' ' },
+        {
+          eName: [
+            '-----', '-----', '-----', '-----', '-----', '-----', '-----', '-----',
+            '-----', '-----', '-----', '-----', '-----', '-----', '-----', '-----',
+          ],
+          eValue: [
+            '-----', '-----', '-----', '-----', '-----', '-----', '-----', '-----',
+            '-----', '-----', '-----', '-----', '-----', '-----', '-----', '-----',
+          ],
+          eUnit: [
+            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+          ],
+        },
       ],
+      // 利用变量接收父组件传过来的变量
+      // changeId: this.changeId,
+      changeId: 0,
     };
   },
+  // 父组件中传递过来的ID
+  // props: ['changeVal'],
   components: {
     TestMap,
     //  TestVideo,
     TextGraph,
     TextHistoryData,
     TextConJourn,
+    DevMean,
   },
   methods: {
-    draw() {
-      const canvas = document.getElementById('stockGraph');
-      if (canvas.getContext) {
-        const ctx = canvas.getContext('2d');
-        ctx.beginPath();
-        ctx.moveTo(75, 50);
-        ctx.lineTo(100, 75);
-        ctx.lineTo(100, 25);
-        ctx.fill();
-      }
+  },
+  computed: {
+    NewDevID() {
+      return this.$store.state.NewDevID;
+    },
+  },
+  watch: {
+    NewDevID() {
+    //  console.log(this.NewDevID);
+      this.changeId = this.NewDevID;
     },
   },
 };
