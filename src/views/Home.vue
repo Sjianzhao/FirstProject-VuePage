@@ -9,162 +9,247 @@
                 <h4 style="color: rgb(181,205,231);background: rgba(135,205,252,0.10);">基础信息</h4>
               </div>
               <div class="basebody">
-                <div class="basename" style="width: 35%; color: antiquewhite">
-                  站点名称:
-                  <br />
-                  {{element.deviceName}}
+                <div class="basename" style="width: 30%; color: antiquewhite;margin: 5px;">
+                  <div style="background: rgba(181,205,231,0.80);
+                  text-align:center;border-radius: 8px; color: black;">
+                    站点名称:
+                  </div>
+                  <div>
+                    <div id="stockGraph" width="20" height="20"></div>
+                  </div>
+                  <div style = "font-size: 14px; text-align: center;">
+                    昆都仑河公园
+                  </div>
                 </div>
-                <div class="baseid" style="width: 25%; color: antiquewhite">
-                  站点类型:
-                  <br />
-                  自动气象站
+                <div class="baseid" style="width: 25%; color: antiquewhite;margin: 5px;">
+                  <div style="background: rgba(181,205,231,0.80);
+                  text-align:center;border-radius: 8px; color: black;">
+                    站点类型:
+                  </div>
+                  <div>
+                    <div id="stockGraph" width="20" height="20"></div>
+                  </div>
+                  <div style = "font-size: 14px; text-align: center;">
+                    自动气象站
+                  </div>
                 </div>
-                <div class="basetime" style="width: 40%; color: antiquewhite">
-                  更新时间:
-                  <br />
-                  {{UpdaTime}}
+                <div class="basetime" style="width: 45%; color: antiquewhite;margin: 5px;">
+                  <div style="background: rgba(181,205,231,0.80);
+                  text-align:center;border-radius: 8px; color: black;">
+                    更新时间:
+                  </div>
+                  <div>
+                    <div id="stockGraph" width="20" height="20"></div>
+                  </div>
+                  <div style = "font-size: 14px; text-align: center;">
+                    {{UpdaTime}}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="datalayout">
+          <div class="datalayout" style= "height:75%;">
             <div>
               <h4 style="color: rgb(181,205,231);background: rgba(135,205,252,0.10);">实时数据</h4>
             </div>
-            <el-row :gutter="10">
+            <el-row :gutter="10" style= "height:18%;">
               <el-col :span="6"><div class="grid-content bg-purple">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[0].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[0].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[0].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[0].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[0].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[0].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[1].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[1].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[1].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[1].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[1].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[1].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[2].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[2].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[2].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[2].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[2].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[2].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[3].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[3].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
-                {{typedata[3].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[3].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[3].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[3].eUnit}}</span>
+                </div>
               </div></el-col>
             </el-row>
-            <el-row :gutter="10">
+            <el-row :gutter="10" style= "height:18%;">
               <el-col :span="6"><div class="grid-content bg-purple3">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[4].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[4].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[4].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[4].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[4].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[4].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[5].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[5].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[5].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[5].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[5].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[5].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[6].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[6].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[6].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[6].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[6].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[6].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[7].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[7].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
-                {{typedata[7].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[7].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[7].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[7].eUnit}}</span>
+                </div>
               </div></el-col>
             </el-row>
-            <el-row :gutter="10">
+            <el-row :gutter="10" style= "height:18%;">
               <el-col :span="6"><div class="grid-content bg-purple2">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[8].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[8].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[8].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[8].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[8].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[8].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[9].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[9].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[9].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[9].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[9].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[9].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[10].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[10].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[10].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[10].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[10].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[10].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple1">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[11].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[11].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
-                {{typedata[11].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[11].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[11].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[11].eUnit}}</span>
+                </div>
               </div></el-col>
             </el-row>
-            <el-row :gutter="10" style="padding:0px">
+            <el-row :gutter="10" style="padding: 0px; height:18%;">
               <el-col :span="6"><div class="grid-content bg-purple1">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[12].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[12].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[12].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[12].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[12].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[12].eUnit.substring(0,2)}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple2">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[13].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[13].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[13].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[13].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[13].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[13].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple3">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[14].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[14].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
-                {{typedata[14].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[14].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[14].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[14].eUnit}}</span>
+                </div>
               </div></el-col>
               <el-col :span="6"><div class="grid-content bg-purple">
-                <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
-                {{typedata[15].eName}}:</p>
-                <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
-                {{typedata[15].eValue}}{{' '}}</span>
-                <span style="margin: 0px;font-size: 12px;color: rgb(125, 126, 176);">
-                {{typedata[15].eUnit}}</span>
+                <div style="background: rgba(135,205,252,0.20);">
+                  <p style="margin: 0px;font-size: 14px;color: rgb(150, 150, 150);">
+                  {{typedata[15].eName}}:</p>
+                </div>
+                <div>
+                  <span style="margin: 0px;font-size: 18px;color: rgb(251,227,131);">
+                  {{typedata[15].eValue}}{{' '}}</span>
+                  <span style="margin: 0px;font-size: 12px;color: rgb(105, 106, 156);">
+                  {{typedata[15].eUnit}}</span>
+                </div>
               </div></el-col>
             </el-row>
           </div>
@@ -218,7 +303,6 @@ export default {
         .then((res) => {
           if (res.data) {
             this.element = res.data;
-            this.UpdaTime = res.data.entity[0].datetime;
             for (let i = 0; i < res.data.entity.length; i += 1) {
               this.typedata[i] = res.data.entity[i];
             }
@@ -229,6 +313,7 @@ export default {
         .get('http://192.168.1.223:8005/intfa/queryData/15112501')
         .then((res) => {
           if (res.data) {
+            this.UpdaTime = res.data.entity[0].datetime;
             for (let i = 0; i < res.data.entity.length; i += 1) {
               this.typedata[i + 9] = res.data.entity[i];
             }
@@ -268,6 +353,8 @@ export default {
     TextHistoryData,
     TextConJourn,
   },
+  methods: {
+  },
 };
 </script>
 
@@ -302,23 +389,31 @@ export default {
   width: 30%;
   display: flex;
   padding: 6px;
-  box-shadow: 0 0 2.5vw #237ad4 inset;
-  background: linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) right bottom,
-  linear-gradient(#1359df, #1359df) right bottom;
+  box-shadow: 0 0 0.2vw #071d49 inset;
+  background: linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) right bottom,
+  linear-gradient(#071d49, #071d49) right bottom;
   background-repeat: no-repeat;
   background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
-
+#stockGraph {
+  border-style: solid;
+  border-width: 10px 5px 1px 5px;
+  border-color: rgba(181,205,231,0.80) transparent transparent transparent;
+  width: 0px;
+  height: 0px;
+  margin-left: 50%;
+}
 .baseifmt {
   width: 100%;
+  height:25%;
   display: flex;
-  box-shadow: 1px 1px 2px 1px #092b88;
+  box-shadow: 1px 1px 1px 1px  rgba(135,205,252,0.1);
 }
 .basetitle {
   width: 100%;
@@ -335,9 +430,9 @@ export default {
 h4 {
   width: 100%;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  box-shadow: 1px 1px 2px 1px #092b88;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: 1px 1px 2px 1px rgba(135,205,252,0.20);
   font-size: 20px;
 }
 .subLay1_1 {
@@ -347,7 +442,8 @@ h4 {
   margin: 5px 5px 5px 5px;
 }
 .el-row {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  height: 15%;
   &:last-child {
     margin-bottom: 0px;
     padding-left: 4px;
@@ -392,15 +488,15 @@ h4 {
   height: 97.3%;
   display: flex;
   padding: 5px;
-  box-shadow: 0 0 2.5vw #237ad4 inset;
-  background: linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) right bottom,
-  linear-gradient(#1359df, #1359df) right bottom;
+  box-shadow: 0 0 0.2vw #071d49 inset;
+  background: linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) right bottom,
+  linear-gradient(#071d49, #071d49) right bottom;
   background-repeat: no-repeat;
   background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
@@ -414,11 +510,15 @@ h4 {
   width: 30.1%;
   display: flex;
   padding: 5px;
-  box-shadow: 0 0 1.5vw #237ad4 inset;
-  background: linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) right bottom,
-  linear-gradient(#1359df, #1359df) right bottom;
+  box-shadow: 0 0 0.2vw #071d49 inset;
+  background: linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) right bottom,
+  linear-gradient(#071d49, #071d49) right bottom;
   background-repeat: no-repeat;
   background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 
@@ -430,15 +530,15 @@ h4 {
   width: 45.9%;
   display: flex;
   padding: 5px;
-  box-shadow: 0 0 2.5vw #237ad4 inset;
-  background: linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) right bottom,
-  linear-gradient(#1359df, #1359df) right bottom;
+  box-shadow: 0 0 0.2vw #071d49 inset;
+  background: linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) right bottom,
+  linear-gradient(#071d49, #071d49) right bottom;
   background-repeat: no-repeat;
   background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
@@ -450,16 +550,15 @@ p {
   width: 19.7%;
   display: flex;
   padding: 5px;
-  box-shadow: 0 0 2.5vw #237ad4 inset;
-  background: linear-gradient(#2856ad, #1359df) left top,
-  linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) right bottom,
-  linear-gradient(#1359df, #1359df) right bottom;
-  background-repeat: no-repeat;
+  box-shadow: 0 0 0.2vw transparent inset;
+  background: linear-gradient( transparent, transparent) left top,
+  linear-gradient(transparent, transparent) left top,
+  linear-gradient(transparent, transparent) right top,
+  linear-gradient(transparent, transparent) right top,
+  linear-gradient(transparent, transparent) left bottom,
+  linear-gradient(transparent, transparent) left bottom,
+  linear-gradient(transparent,transparent) right bottom,
+  linear-gradient(transparent,transparent) right bottom;
   background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }
 /*显示图形的第六个块部分*/
@@ -467,15 +566,15 @@ p {
   width: 20.2%;
   display: flex;
   padding: 5px;
-  box-shadow: 0 0 2.5vw #237ad4 inset;
-  background: linear-gradient(#2856ad, #1359df) left top,
-  linear-gradient(#1359df, #1359df) left top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) right top,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) left bottom,
-  linear-gradient(#1359df, #1359df) right bottom,
-  linear-gradient(#1359df, #1359df) right bottom;
+  box-shadow: 0 0 0.2vw #071d49 inset;
+  background: linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) left top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) right top,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) left bottom,
+  linear-gradient(#071d49, #071d49) right bottom,
+  linear-gradient(#071d49, #071d49) right bottom;
   background-repeat: no-repeat;
   background-size: 0.1vw 18vw, 1.5vw 0.1vw;
 }

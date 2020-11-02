@@ -1,7 +1,7 @@
 <template>
   <div class="master">
     <div class="header">
-      <h1 style= "margin: 0;  color: white">昆都仑河国家湿地公园监控平台</h1>
+      <h1 style= "margin: 10px;  color: rgb(181,205,231);">昆都仑河国家湿地公园监控平台</h1>
     </div>
     <div class="main">
       <div class="nav">
@@ -19,8 +19,15 @@ export default {
 </script>
 
 <style>
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
+  height: 100%;
+  width: 100%;
   margin: 0px;
+  display: flex;
 }
 .master {
   background-size:cover;
@@ -30,11 +37,12 @@ body {
   background-size: cover;
 }
 .header {
-  box-shadow: 0px 1px 3px rgba(9, 8, 8, 0.8);
+  box-shadow: 1px 1px 1px rgba(8, 8, 8, 0.8);
+  height: 7%;
 }
 .main {
   width: 100%;
-  height: 680px;
+  height: 90%;
   display: flex;
 }
 .content {

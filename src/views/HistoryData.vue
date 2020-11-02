@@ -2,7 +2,7 @@
   <div class="hisdata">
     <div class="hisdata-title">
       <div class="hisdata-tit">
-        <p style="color: rgb(181,205,231);"> <b>历史数据</b></p>
+        <p style="color: rgb(181,205,231);background: rgba(135,205,252,0.10);"> <b>历史数据</b></p>
       </div>
       <div class="hisdata-bady">
         <el-table
@@ -14,33 +14,35 @@
           style="padding: 3px;"
           >
           </el-table-column>
-          <el-table-column prop="data0" :label="tableData[0].tableName[0]" width="90">
+          <el-table-column prop="data0" :label="tableData[0].tableName[0]" width="80">
           </el-table-column>
-          <el-table-column prop="data1" :label="tableData[0].tableName[1]" width="90">
+          <el-table-column prop="data1" :label="tableData[0].tableName[1]" width="80">
           </el-table-column>
-          <el-table-column prop="data2" :label="tableData[0].tableName[2]" width="90">
+          <el-table-column prop="data2" :label="tableData[0].tableName[2]" width="80">
           </el-table-column>
-          <el-table-column prop="data3" :label="tableData[0].tableName[3]" width="90">
+          <el-table-column prop="data3" :label="tableData[0].tableName[3]" width="80">
           </el-table-column>
-          <el-table-column prop="data4" :label="tableData[0].tableName[4]" width="90">
+          <el-table-column prop="data4" :label="tableData[0].tableName[4]" width="80">
           </el-table-column>
-          <el-table-column prop="data5" :label="tableData[0].tableName[5]" width="90">
+          <el-table-column prop="data5" :label="tableData[0].tableName[5]" width="80">
           </el-table-column>
-          <el-table-column prop="data6" :label="tableData[0].tableName[6]" width="90">
+          <el-table-column prop="data6" :label="tableData[0].tableName[6]" width="80">
           </el-table-column>
-          <el-table-column prop="data7" :label="tableData[0].tableName[7]" width="90">
+          <el-table-column prop="data7" :label="tableData[0].tableName[7]" width="80">
           </el-table-column>
           <el-table-column prop="data8" :label="tableData[0].tableName[8]" width="90">
           </el-table-column>
-          <el-table-column prop="data9" :label="tableData[0].tableName[9]" width="90">
+          <el-table-column prop="data9" :label="tableData[0].tableName[9]" width="80">
           </el-table-column>
-          <el-table-column prop="data10" :label="tableData[0].tableName[10]" width="90">
+          <el-table-column prop="data10" :label="tableData[0].tableName[10]" width="80">
           </el-table-column>
-          <el-table-column prop="data11" :label="tableData[0].tableName[11]" width="90">
+          <el-table-column prop="data11" :label="tableData[0].tableName[11]" width="80">
           </el-table-column>
-          <el-table-column prop="data12" :label="tableData[0].tableName[12]" width="90">
+          <el-table-column prop="data12" :label="tableData[0].tableName[12]" width="80">
           </el-table-column>
-          <el-table-column prop="data13" :label="tableData[0].tableName[13]" width="90">
+          <el-table-column prop="data13" :label="tableData[0].tableName[13]" width="80">
+          </el-table-column>
+          <el-table-column prop="data14" :label="tableData[0].tableName[14]" width="80">
           </el-table-column>
         </el-table>
       </div>
@@ -57,58 +59,58 @@ export default {
         .then((res) => {
           if (res.data) {
             if (this.hisDateFlag === 0) {
-              this.tableData[0].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
+                // this.tableData[0].date = res.data.entity[0].datetime;
                 this.tableData[0][`data${i}`] = res.data.entity[i].eValue;
                 this.tableData[0].tableName.splice(i, 1, res.data.entity[i].eName);
               }
             } else if (this.hisDateFlag === 1) {
-              this.tableData[1].date = res.data.entity[0].datetime;
+              // this.tableData[1].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[1][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 2) {
-              this.tableData[2].date = res.data.entity[0].datetime;
+              // this.tableData[2].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[2][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 3) {
-              this.tableData[3].date = res.data.entity[0].datetime;
+              // this.tableData[3].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[3][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 4) {
-              this.tableData[4].date = res.data.entity[0].datetime;
+              // this.tableData[4].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[4][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 5) {
-              this.tableData[5].date = res.data.entity[0].datetime;
+              // this.tableData[5].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[5][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 6) {
-              this.tableData[6].date = res.data.entity[0].datetime;
+              // this.tableData[6].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[6][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 7) {
-              this.tableData[7].date = res.data.entity[0].datetime;
+              // this.tableData[7].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[7][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 8) {
-              this.tableData[8].date = res.data.entity[0].datetime;
+              // this.tableData[8].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[8][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 9) {
-              this.tableData[9].date = res.data.entity[0].datetime;
+              // this.tableData[9].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[9][`data${i}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 10) {
-              this.tableData[10].date = res.data.entity[0].datetime;
+              // this.tableData[10].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[10][`data${i}`] = res.data.entity[i].eValue;
               }
@@ -117,51 +119,63 @@ export default {
         })
         .catch();
       this.$http
-        .get('http://192.168.1.223:8005/intfa/queryData/15112501')
+        // .get('http://192.168.1.223:8005/intfa/queryData/15112501')
+        .get('http://47.105.215.208:8005/intfa/queryData/16069044')
         .then((res) => {
           if (res.data) {
             if (this.hisDateFlag === 0) {
+              this.tableData[0].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[0][`data${i + 9}`] = res.data.entity[i].eValue;
                 this.tableData[0].tableName.splice(i + 9, 1, res.data.entity[i].eName);
               }
             } else if (this.hisDateFlag === 1) {
+              this.tableData[1].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[1][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 2) {
+              this.tableData[2].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[2][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 3) {
+              this.tableData[3].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[3][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 4) {
+              this.tableData[4].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[4][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 5) {
+              this.tableData[5].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[5][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 6) {
+              this.tableData[6].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[6][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 7) {
+              this.tableData[7].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[7][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 8) {
+              this.tableData[8].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[8][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 9) {
+              this.tableData[9].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[9][`data${i + 9}`] = res.data.entity[i].eValue;
               }
             } else if (this.hisDateFlag === 10) {
+              this.tableData[10].date = res.data.entity[0].datetime;
               for (let i = 0; i < res.data.entity.length; i += 1) {
                 this.tableData[10][`data${i + 9}`] = res.data.entity[i].eValue;
               }
@@ -205,6 +219,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
           tableName: [
             '---', '---', '---', '---', '---', '---', '---', '---',
             '---', '---', '---', '---', '---', '---'],
@@ -224,6 +239,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -240,6 +256,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -256,6 +273,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -272,6 +290,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -288,6 +307,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -304,6 +324,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -320,6 +341,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -336,6 +358,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -352,6 +375,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         }, {
           date: '',
           data0: '',
@@ -368,6 +392,7 @@ export default {
           data11: '',
           data12: '',
           data13: '',
+          data14: '',
         },
       ],
     };
@@ -400,7 +425,7 @@ export default {
   text-align: center;
   font-size: 20px;
   margin: 2px;
-  box-shadow: 1px 1px 2px 2px #092b88;
+  box-shadow: 1px 1px 2px 2px  rgba(135,205,252,0.20);
   font-size: 20px;
   background: rgba(135,205,252,0.10);
 }
@@ -422,21 +447,22 @@ export default {
   height: 0;
 }
 .el-table >>> th {
-  background-color:rgba(0, 0, 0, 0.1)!important;
-  color: white;
+  background-color: rgba(135,205,252,0.10) !important;
+  color: black;
   padding-top: 2px;
 }
 .el-table >>> tr {
   border: 0;
-  color: white;
-  background-color: rgba(9, 43, 136, 0.1)!important;
+  color:rgba(251,227,131,0.8);
+  background-color: transparent!important;
 }
 .el-table >>> tr:hover td {
   background-color: transparent;
   padding-top: 2px;
 }
 .el-table >>> tr:nth-child(2n+1) {
-  background-color: rgba(85, 86, 156, 0.1)!important;
+  background-color: transparent!important;
+  color:rgba(139, 159, 179, 0.8);
   padding-top: 2px;
 }
 .el-table >>> td {

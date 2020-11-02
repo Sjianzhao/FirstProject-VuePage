@@ -6,8 +6,8 @@
         <b>阈值设置：</b></p>
     </div>
   </el-row>
-  <el-row style="margin: 10px;">
-   <el-col :span="9" style="font-size: large; margin: 6px;color: white;">选择要素：</el-col>
+  <el-row style="margin: 5px; height: 20%;">
+   <el-col :span="9" style="font-size: large; margin: 6px;color: rgb(150,150,150);">选择要素：</el-col>
     <el-select
     v-model="factor" placeholder="请选择要素"
     style="width: 140px; height: 20px;"
@@ -17,28 +17,31 @@
       </el-option>
     </el-select>
   </el-row>
-  <div style="margin: 10px; height: 36px">
-    <el-col :span="9" style="font-size: large; margin: 6px;color: white;">设置上限：</el-col>
-    <el-input v-model="inputUp" placeholder="请输入上限"
-    type="text" style="width: 140px; height: 20px; background: transparent;">
+  <div style="margin: 5px;  height: 20%;">
+    <el-col :span="9" style="font-size: large; margin: 6px;color: rgb(150,150,150);">设置上限：</el-col>
+    <el-input class="textarea"
+     auto-complete="on"
+     type="text"
+     style="width: 140px; height: 20px;"
+     v-model="inputUp"
+     placeholder="请输入上限">
     </el-input>
   </div>
-  <div style="margin: 10px; height: 36px">
-    <el-col :span="9" style="font-size: large; margin: 6px;color: white;">设置下限：</el-col>
+  <div style="margin: 5px;  height: 20%;">
+    <el-col :span="9" style="font-size: large; margin: 6px;color: rgb(150,150,150);">设置下限：</el-col>
     <el-input v-model="inputDown"
       type="text"
       placeholder="请输入下限"
       :rows="2"
-      style="width: 140px; height: 10px;"
+      style="width: 140px; height: 20px;"
     ></el-input>
   </div>
-  <br>
   <el-row style="text-align: center">
-    <el-button type="primary"
+    <el-button type="text" plain
     round @click="setThresholdValue"
     style="background-color: transparent;"
     >设置</el-button>
-    <el-button type="success" plain style="background-color: transparent;"
+    <el-button type="text" style="background-color: transparent;"
     >{{this.conState}}</el-button>
   </el-row>
 </div>
@@ -161,6 +164,10 @@ export default {
         value: '',
         label: '',
         myValue: 0,
+      }, {
+        value: '',
+        label: '',
+        myValue: 0,
       }],
     };
   },
@@ -185,10 +192,27 @@ export default {
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  box-shadow: 1px 1px 2px 2px #092b88;
+  box-shadow: 1px 1px 2px 2px rgba(135,205,252,0.20);
   font-size: 20px;
 }
 .el-low {
   width: 100%;
+}
+.el-input__inner {
+    -webkit-appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #2f56af;
+    box-sizing: border-box;
+    color:rgba(251,227,131,0.8);
+    display: inline-block;
+    font-size: inherit;
+    height: 35px;
+    line-height:5px;
+    outline: 0;
+    padding: 0;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
 }
 </style>

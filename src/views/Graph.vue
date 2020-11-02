@@ -25,6 +25,8 @@ export default {
       channelValue: [],
       channelName: [],
       postnumber: 0,
+      channelLestFlag: '0',
+      channelLestTime: '0',
     };
   },
   mounted() {
@@ -36,13 +38,7 @@ export default {
             for (let i = 0; i < response.data.entity.length; i += 1) {
               this.channelName[i] = response.data.entity[i].eName;
               this.channelValue[i] = response.data.entity[i].eValue;
-              this.channelTime[i] = response.data.entity[i].datetime;
             }
-            this.channelTime[9] = response.data.entity[0].datetime;
-            this.channelTime[10] = response.data.entity[0].datetime;
-            this.channelTime[11] = response.data.entity[0].datetime;
-            this.channelTime[12] = response.data.entity[0].datetime;
-            this.channelTime[13] = response.data.entity[0].datetime;
           }
         })
         .catch();
@@ -53,20 +49,39 @@ export default {
             for (let i = 0; i < response.data.entity.length; i += 1) {
               this.channelName[i + 9] = response.data.entity[i].eName;
               this.channelValue[i + 9] = response.data.entity[i].eValue;
+              this.channelTime[i + 9] = response.data.entity[0].datetime;
             }
+            this.channelTime[0] = response.data.entity[0].datetime;
+            this.channelTime[1] = response.data.entity[0].datetime;
+            this.channelTime[2] = response.data.entity[0].datetime;
+            this.channelTime[3] = response.data.entity[0].datetime;
+            this.channelTime[4] = response.data.entity[0].datetime;
+            this.channelTime[5] = response.data.entity[0].datetime;
+            this.channelTime[6] = response.data.entity[0].datetime;
+            this.channelTime[7] = response.data.entity[0].datetime;
+            this.channelTime[8] = response.data.entity[0].datetime;
+            this.channelLestFlag = response.data.entity[0].datetime;
           }
         })
         .catch();
-      for (let i = 0; i < 14; i += 1) {
-        if (this.postnumber >= 600) {
-          this.channel[i].shift();
+      for (let i = 0; i < 15; i += 1) {
+        if (this.postnumber >= 6000) {
+          if (this.channelLestTime !== this.channelTime[i]) {
+            this.channel[i].shift();
+          }
         }
-        this.channel[i].push({
-          name: this.channelName[i],
-          value: [this.channelTime[i], this.channelValue[i]],
-        });
+        if (this.channelLestTime !== this.channelTime[i]) {
+          this.channel[i].push({
+            name: this.channelName[i],
+            value: [this.channelTime[i], this.channelValue[i]],
+          });
+        }
       }
       this.postnumber += 1;
+      if (this.postnumber > 6000) {
+        this.postnumber = 6000;
+      }
+      this.channelLestTime = this.channelLestFlag;
       this.chartLine.setOption({
         series: [{
           name: this.channelName[0],
@@ -118,7 +133,7 @@ export default {
           data: this.channel[15],
         }],
       });
-    }, 62000);
+    }, 6000);
     this.chartLine = echarts.init(document.getElementById('gra-chart'));
     const option = {
       tooltip: {
@@ -302,22 +317,13 @@ export default {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  box-shadow: 1px 1px 2px 2px #092b88;
+  box-shadow: 1px 1px 2px 2px rgba(135,205,252,0.20);
   font-size: 20px;
   }
 .el-tabs__item {
   margin: 0px;
   padding-left: 10px;
   padding-right: 10px;
-}
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 8px;
-  text-decoration: none;
-}
-li a:hover:not(.active) {
-  color: white;
 }
 .gra-tab {
   height: 15%;
