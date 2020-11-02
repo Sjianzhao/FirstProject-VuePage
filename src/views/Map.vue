@@ -25,15 +25,10 @@ export default {
       map: null,
       position: [
         {
-          longitude: 114.267186, latitude: 30.378425, name: '渗压位移观测站', devicdId: '16069029',
-        },
-        {
-          longitude: 113.270444, latitude: 30.379811, name: '液位雨量观测站', devicdId: '16069044',
-        },
-        {
-          longitude: 113.266494, latitude: 31.378825, name: '滑坡观测站', devicdId: '16068992',
+          longitude: 120.42348, latitude: 36.13225, name: '自动气象站', devicdId: ' ',
         },
       ],
+      mapID: 0,
       dialogPreviewVisible: false,
       currentDevice: {},
     };
@@ -44,8 +39,8 @@ export default {
     const satellite = new AMap.TileLayer.Satellite();
     const roadNet = new AMap.TileLayer.RoadNet();
     const map = new AMap.Map('container', {
-      zoom: 7,
-      center: [114.267186, 30.378425],
+      zoom: 10,
+      center: [120.42348, 36.13225],
       viewMode: '3D',
       resizeEnable: true,
       layers: [
@@ -55,7 +50,7 @@ export default {
     });
     const markerIcon = new AMap.Icon({
       size: new AMap.Size(50, 50),
-      image: 'http://115.28.187.9:8081/images/onstage/location.png',
+      image: 'http://47.105.215.208:8081/images/onstage/location.png',
       imageSize: new AMap.Size(50, 50),
     });
     const markers = [];
@@ -74,7 +69,7 @@ export default {
       marker.on('click', () => {
         this.dialogPreviewVisible = true;
         this.$http
-          .get(`http://47.105.215.208:8005/intfa/queryData/${this.position[i].devicdId}`)
+          .get(`http://47.105.215.208:8005/intfa/queryData/${this.mapID}`)
           .then((res) => {
             this.currentDevice = res.data;
           })
@@ -84,6 +79,17 @@ export default {
     }
     map.add(markers);
     this.map = map;
+  },
+  computed: {
+    NewDevID() {
+      return this.$store.state.NewDevID;
+    },
+  },
+  watch: {
+    NewDevID() {
+    //  console.log(this.NewDevID);
+      this.mapID = this.NewDevID;
+    },
   },
 };
 </script>

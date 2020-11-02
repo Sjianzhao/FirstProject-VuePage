@@ -85,7 +85,6 @@ export default {
                 this.DevListId[i] = this.EleList[i].facId;// 获取设备的ID
               }
               for (let j = 0; j < this.EleList.length; j += 1) {
-                console.log(3123);
                 this.ListNumber.push({
                   DivID: this.DevListId[j],
                   value: j,
