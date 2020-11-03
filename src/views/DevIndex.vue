@@ -17,8 +17,9 @@ export default {
   data() {
     return {
       ListNumber: [],
-      // 用于存储最终排序好了的设备ID
+      // 用于存储设备所有信息
       EleList: [],
+      // 用于存储最终排序好了的设备ID
       DevListId: [],
       loginForm: {
         username: '9162900',
