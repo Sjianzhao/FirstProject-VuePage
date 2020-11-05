@@ -19,5 +19,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'prefer-template': 'off',
     'no-eval': 'off',
+    'func-names': 'off',
   },
 };

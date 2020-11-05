@@ -56,7 +56,7 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get(`http://47.105.215.208:8005/intfa/queryData/${this.NewID}`)
+        .get(`http://27.223.13.155:8005/intfa/queryData/${this.NewID}`)
         .then((res) => {
           if (res.data) {
             if (this.hisDateFlag === 0) {
@@ -205,6 +205,7 @@ export default {
           }
         }
       }
+      this.hisDateFlag = 0;
     },
   },
 };

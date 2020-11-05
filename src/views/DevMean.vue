@@ -34,7 +34,7 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get(`http://47.105.215.208:8005/intfa/queryData/${this.userID}`)
+        .get(`http://27.223.13.155:8005/intfa/queryData/${this.userID}`)
         .then((res) => {
           if (res.data) {
             for (let i = 0; i < res.data.entity.length; i += 1) {
@@ -154,6 +154,12 @@ export default {
         while (this.barData[j].length !== 0) {
           this.barData[j].shift();
         }
+      }
+      while (this.barName.length !== 0) {
+        this.barName.shift();
+      }
+      while (this.barValue.length !== 0) {
+        this.barValue.shift();
       }
     },
   },

@@ -18,7 +18,7 @@
                     <div id="stockGraph" width="20" height="20"></div>
                   </div>
                   <div style = "font-size: 14px; text-align: center;">
-                    昆都仑河公园
+                    {{element.deviceName}}
                   </div>
                 </div>
                 <div class="baseid" style="width: 25%; color: antiquewhite;margin: 5px;">
@@ -302,7 +302,7 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get(`http://47.105.215.208:8005/intfa/queryData/${this.changeId}`)
+        .get(`http://27.223.13.155:8005/intfa/queryData/${this.changeId}`)
         .then((res) => {
           if (res.data) {
             this.element = res.data;
@@ -367,6 +367,11 @@ export default {
     NewDevID() {
     //  console.log(this.NewDevID);
       this.changeId = this.NewDevID;
+      for (let i = 0; i < 16; i += 1) {
+        this.typedata[0].eName[i] = '-----';
+        this.typedata[0].eValue[i] = '-----';
+        this.typedata[0].eUnit[i] = ' ';
+      }
     },
   },
 };

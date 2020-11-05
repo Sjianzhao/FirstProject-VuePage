@@ -34,7 +34,7 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get(`http://47.105.215.208:8005/intfa/queryData/${this.changeId}`)
+        .get(`http://27.223.13.155:8005/intfa/queryData/${this.changeId}`)
         .then((response) => {
           if (response.data) {
             for (let i = 0; i < response.data.entity.length; i += 1) {
@@ -47,7 +47,7 @@ export default {
         })
         .catch();
       if (this.channelLestTime !== this.channelTime[0]) {
-        for (let i = 0; i < 15; i += 1) {
+        for (let i = 0; i < 16; i += 1) {
           if (this.postnumber >= 6000) {
             this.channel[i].shift();
           }
@@ -289,6 +289,9 @@ export default {
         while (this.channel[j].length !== 0) {
           this.channel[j].shift();
         }
+      }
+      while (this.channelTime.length !== 0) {
+        this.channelTime.shift();// 清除时间，防止覆盖的时间没有被覆盖的时间长
       }
     },
   },

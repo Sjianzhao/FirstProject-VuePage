@@ -54,7 +54,7 @@ export default {
     setInterval(() => {
       this.$http
         // .get('http://192.168.1.223:8005/intfa/queryData/16069877')
-        .get(`http://47.105.215.208:8005/intfa/queryData/${this.changeId}`)
+        .get(`http://27.223.13.155:8005/intfa/queryData/${this.changeId}`)
         .then((res) => {
           if (res.data) {
             for (let i = 0; i < res.data.entity.length; i += 1) {
@@ -115,27 +115,15 @@ export default {
         label: '',
         myValue: 0,
       }, {
-        value: ' ',
+        value: 'e',
         label: '',
         myValue: 0,
       }, {
-        value: ' ',
+        value: 'f',
         label: '',
         myValue: 0,
       }, {
-        value: ' ',
-        label: '',
-        myValue: 0,
-      }, {
-        value: ' ',
-        label: '',
-        myValue: 0,
-      }, {
-        value: ' ',
-        label: '',
-        myValue: 0,
-      }, {
-        value: ' ',
+        value: 'g',
         label: '',
         myValue: 0,
       }, {

@@ -69,7 +69,7 @@ export default {
       marker.on('click', () => {
         this.dialogPreviewVisible = true;
         this.$http
-          .get(`http://47.105.215.208:8005/intfa/queryData/${this.mapID}`)
+          .get(`http://27.223.13.155:8005/intfa/queryData/${this.mapID}`)
           .then((res) => {
             this.currentDevice = res.data;
           })
