@@ -116,7 +116,7 @@ export default {
         data: [],
         axisLine: {
           lineStyle: {
-            color: '#000000',
+            color: '#666666',
           },
         },
       }],
@@ -124,7 +124,7 @@ export default {
         type: 'value',
         axisLine: {
           lineStyle: {
-            color: '#660066',
+            color: '#666666',
           },
         },
       }],

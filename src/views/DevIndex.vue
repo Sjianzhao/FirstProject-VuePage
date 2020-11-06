@@ -80,6 +80,7 @@ export default {
             })
             .catch();
         }
+        console.log('设备本次排序完成');
         // console.log(this.ListNumber);
         // console.log(this.SortDevId);
         // 排序
@@ -122,7 +123,7 @@ export default {
           password: this.loginForm.password,
         }).then((response) => {
           if (response.data.token) {
-            // console.log(response.data.token);
+            console.log(response.data.token);
             sessionStorage.setItem('username', this.loginForm.username);
             sessionStorage.setItem('password', this.loginForm.password);
             sessionStorage.setItem('token', response.data.token);
@@ -144,6 +145,7 @@ export default {
             const { data } = response;// 接收返回数据
             this.$store.commit('userId', { userId: data.id });
             this.EleList = data.devices;//   获取设备信息
+            console.log('成功接收返回数据');
             const promiseArr = [];
             this.EleList.forEach((device) => {
               const p = new Promise((resolve) => {
@@ -168,6 +170,7 @@ export default {
               }
               this.ListNumber.shift();
               // 第一次先把设备ID送上去，后面再每30S进行一次排序
+              console.log('获取设备ID');
               for (let j = 0; j < this.EleList.length; j += 1) {
                 this.DevNumber += 1;
                 this.ListNumber.push({
@@ -175,6 +178,8 @@ export default {
                   value: j,
                 });
               }
+              console.log('ID获取完成');
+              console.log('进行排序');
             });
             // this.EleList.push(...data.pests);//  设备的数据最终装入这里
             // console.log(this.DevListId[this.EleList.length - 1]);

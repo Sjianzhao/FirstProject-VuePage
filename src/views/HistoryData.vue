@@ -6,7 +6,7 @@
       </div>
       <div class="hisdata-bady">
         <el-table
-          :header-cell-style="{background:'#eef1f6',color:'#606266'}"
+          :header-cell-style="{background:'#eef1f6',color:'#ffeeff'}"
           class = "hisdata-table" :data.sync="tableData" style="width: 100%" height="100%"
         >
           <el-table-column
@@ -33,16 +33,6 @@
           <el-table-column prop="data[8]" :label="tableData[0].tableName[8]" width="90">
           </el-table-column>
           <el-table-column prop="data[9]" :label="tableData[0].tableName[9]" width="80">
-          </el-table-column>
-          <el-table-column prop="data[10]" :label="tableData[0].tableName[10]" width="80">
-          </el-table-column>
-          <el-table-column prop="data[11]" :label="tableData[0].tableName[11]" width="80">
-          </el-table-column>
-          <el-table-column prop="data[12]" :label="tableData[0].tableName[12]" width="80">
-          </el-table-column>
-          <el-table-column prop="data[13]" :label="tableData[0].tableName[13]" width="80">
-          </el-table-column>
-          <el-table-column prop="data[14]" :label="tableData[0].tableName[14]" width="80">
           </el-table-column>
         </el-table>
       </div>
@@ -254,13 +244,13 @@ export default {
   height: 0;
 }
 .el-table >>> th {
-  background-color: rgba(135,205,252,0.10) !important;
+  background-color: rgba(214, 227, 236, 0.1) !important;
   color: black;
   padding-top: 2px;
 }
 .el-table >>> tr {
   border: 0;
-  color:rgba(251,227,131,0.8);
+  color:rgba(248, 222, 116, 0.767);
   background-color: transparent!important;
 }
 .el-table >>> tr:hover td {
@@ -269,7 +259,7 @@ export default {
 }
 .el-table >>> tr:nth-child(2n+1) {
   background-color: transparent!important;
-  color:rgba(139, 159, 179, 0.8);
+  color:rgba(226, 233, 240, 0.8);
   padding-top: 2px;
 }
 .el-table >>> td {

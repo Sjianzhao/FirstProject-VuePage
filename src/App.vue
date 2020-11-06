@@ -7,8 +7,8 @@
             <Devindex @transferUser="getId"></Devindex>
           </div></el-col>
         <el-col :span="22">
-          <div>
-            <h1 style= "margin: 10px;  color: rgb(181,205,231);">XXXX公园监控平台</h1>
+          <div class="BiaoTiCss">
+            <h1 style= "margin: 10px;  color: rgb(181,205,231);">空气微站监控平台</h1>
           </div>
         </el-col>
       </el-row>
@@ -60,13 +60,20 @@ body {
   background-size:cover;
   height: 100%;
   width: 100%;
-  background: url('./assets/tianyan.jpg') no-repeat center;
+  background: url('./assets/background006.jpg') no-repeat center;
   background-size: cover;
 }
 .header {
   box-shadow: 1px 1px 1px rgba(8, 8, 8, 0.8);
   height: 7%;
   width: 100%;
+}
+.BiaoTiCss {
+  background-image: -webkit-linear-gradient(top, rgb(243, 66, 66), #22ee44, #3a1ce0);
+/* 规定背景绘制区域 */
+  -webkit-background-clip: text;
+/* 将文字隐藏 */
+  -webkit-text-fill-color: transparent;
 }
 .main {
   width: 100%;

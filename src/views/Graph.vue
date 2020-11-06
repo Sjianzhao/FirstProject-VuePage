@@ -141,7 +141,7 @@ export default {
         boundaryGap: false,
         name: '时间',
         nameTextStyle: {
-          color: '#000000',
+          color: '#aaaaaa',
           fontSize: 12,
           padding: [0, 0, 5, 0],
         },
@@ -156,7 +156,7 @@ export default {
         type: 'value',
         boundaryGap: [0, '30%'],
         nameTextStyle: {
-          color: '#000000',
+          color: '#aaaaaa',
           fontSize: 12,
           padding: [0, 0, 5, 0],
         },
