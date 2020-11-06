@@ -4,7 +4,7 @@
     <el-select v-model="factorDevList" @change="setId"
     placeholder="设备列表"
     style="width: 110px; height: 20px;">
-      <el-option v-for="item in SortDevId"  :key="item.PM25"
+      <el-option v-for="item in SortDevId"  :key="item.ID"
         :label="item.ID" :value="item.ID">
       </el-option>
     </el-select>
@@ -30,6 +30,7 @@ export default {
         ID: '排序中...',
         PM25: 11,
       }],
+      ReshTime: 0,
       DevNumber: 0,
       loginForm: {
         username: 'TD',
@@ -46,7 +47,7 @@ export default {
     // 对获取到的设备进行排序。
     setInterval(() => {
       // 当设备ID获取到了之后
-      if (this.DevListId.length !== 0) {
+      if (this.DevListId.length !== 0 && this.ReshTime % 10 === 0) {
         // 每回进来先清空数组中的数据
         while (this.SortDevId.length > 0) {
           this.SortDevId.shift();
@@ -63,11 +64,13 @@ export default {
                   this.SortDevId.push({
                     ID: res.data.deviceId,
                     PM25: Number(res.data.entity[5].eValue),
+                    // ID: res.data.deviceName,
                   });
                 } else {
                   this.SortDevId.push({
                     ID: res.data.deviceId,
                     PM25: 0,
+                    // ID: res.data.deviceName,
                   });
                 }
               }
@@ -77,10 +80,7 @@ export default {
             })
             .catch();
         }
-        for (let i = 0; i < this.DevNumber; i += 1) {
-          this.ListNumber[i].DevID = this.SortDevId[i].ID;
-        }
-        console.log(this.ListNumber);
+        // console.log(this.ListNumber);
         // console.log(this.SortDevId);
         // 排序
         // this.SortDevId.sort((a, b) => b.PM25 - a.PM25);
@@ -111,7 +111,8 @@ export default {
         // }
         // console.log(3333);
       }
-    }, 30000);
+      this.ReshTime += 1;
+    }, 6000);
     // 登录获取账号里面的设备信息
     setTimeout(() => {
       // 获取token
